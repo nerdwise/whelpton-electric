@@ -8,4 +8,8 @@ description: A basic Grow demo website.
 ng_controller: BaseController
 
 components:
-- component: nav
+  - component: nav
+    logo: https://via.placeholder.com/150
+    logoalt: Whelpton Electric
+  - component: hero
+    title: wow such title
