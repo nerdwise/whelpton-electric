@@ -1,6 +1,26 @@
-nav 
-  height: 5vh
-  background: purple
+.nav 
+  height: 15vh
+  background: $default-dark-background
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  padding: 0 8rem
+  font-weight: 300
 
-  __logo
-    max-height: 100%
+  img
+    height: 50%
+
+  &__right
+    height: 50%
+    width: 50%
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &__link
+      text-decoration: none
+
+    &__item 
+      color: white
+    
