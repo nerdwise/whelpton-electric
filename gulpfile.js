@@ -1,38 +1,37 @@
 var extend = require("deep-extend");
-var fs = require("fs");
 var gulp = require("gulp");
 var gulpAutoprefixer = require("gulp-autoprefixer");
 var path = require("path");
-var readdirRecursive = require("fs-readdir-recursive");
 var rename = require("gulp-rename");
 var sass = require("gulp-sass");
 var webpack = require("webpack");
 var webpackStream = require("webpack-stream");
+var exec = require('gulp-exec');
 
 var config = {
-  // JS_SOURCE_FILE: "./source/js/main.js",
-  // JS_SOURCES: ["./partials/**/*.js", "./source/js/**/*.js"],
-  // JS_OUT_DIR: "./dist/js/",
-  // JS_OPTIONS: {
-  //   uglify: {
-  //     mangle: false
-  //   }
-  // },
+  TS_SOURCES: ["./global/*.ts", "./components/**/*.ts"],
+  JS_SOURCE_FILE: "./tmp/js/global/main.js",
+  JS_SOURCES: ["./tmp/js/**/*.js"],
+  JS_OUT_DIR: "./dist/js/",
+  JS_OPTIONS: {
+    uglify: {
+      mangle: false
+    }
+  },
   SASS_SOURCE_FILE: "./global/main.sass",
   SASS_SOURCES: ["./global/*.{sass,scss}", "./components/**/*.{sass,scss}"],
   SASS_OUT_DIR: "./dist/css/"
 };
 
-var entry = { main: config.JS_SOURCE_FILE };
-
 var webpackConfig = {
-  entry: entry,
+  entry: { main: config.JS_SOURCE_FILE },
   mode: "development",
   output: {
     path: path.resolve(__dirname, config.JS_OUT_DIR),
     filename: "[name].min.js"
   }
 };
+
 var webpackProdConfig = extend(
   {
     mode: "production"
@@ -40,24 +39,16 @@ var webpackProdConfig = extend(
   webpackConfig
 );
 
-// gulp.task("compile-js", function() {
-//   return gulp
-//     .src(config.JS_SOURCES)
-//     .pipe(webpackStream(webpackProdConfig, webpack))
-//     .pipe(gulp.dest(config.JS_OUT_DIR));
-// });
+const compileJs = () => {
+  return gulp
+      .src(config.JS_SOURCES)
+      .pipe(webpackStream(webpackProdConfig, webpack))
+      .pipe(gulp.dest(config.JS_OUT_DIR));
+};
+gulp.task("compile-js", compileJs);
 
-// gulp.task("watch-js", () => {
-//   webpackConfig.watch = true;
-
-//   gulp
-//     .src(config.JS_SOURCES)
-//     .pipe(webpackStream(webpackConfig, webpack))
-//     .pipe(gulp.dest(config.JS_OUT_DIR));
-// });
-
-gulp.task("compile-sass", function() {
-  gulp
+const compileSass = () => {
+  return gulp
     .src(config.SASS_SOURCE_FILE)
     .pipe(
       sass({
@@ -76,26 +67,34 @@ gulp.task("compile-sass", function() {
       })
     )
     .pipe(gulp.dest(config.SASS_OUT_DIR));
-});
+};
+gulp.task("compile-sass", compileSass);
 
-gulp.task("watch-sass", function() {
-  gulp.watch(config.SASS_SOURCES, ["compile-sass"]);
-});
+const watchSass = () => gulp.watch(config.SASS_SOURCES, compileSass);
+gulp.task("watch-sass", watchSass);
 
-gulp.task("compile-ts", ["clear-old-ts", "build-new-ts"]);
+const watchTs = () => gulp.watch(config.TS_SOURCES, compileTs);
+gulp.task("watch-ts", watchTs);
 
-gulp.task("clear-old-ts", function() {
-  exec("rm -rf ./tmp/**/*.js");
-});
+const clearOldTs = () =>{
+  return gulp.src('./tmp/js', {allowEmpty: true})
+      .pipe(exec('rm -rf <%= file.path %>'));
+};
+gulp.task("clear-old-ts", clearOldTs);
 
-gulp.task("build-new-ts", function() {
-  exec("tsc -p ./");
-});
+const buildNewTs = () => {
+  return gulp.src('./tsconfig.json')
+      .pipe(exec('tsc -p <%= file.path %>'));
+};
+gulp.task("build-new-ts", buildNewTs);
 
-// gulp.task("build", ["compile-js", "compile-sass"]);
-// gulp.task("grow-build", ["compile-js", "compile-sass"]);
-// gulp.task("default", ["watch-js", "compile-sass", "watch-sass"]);
+const sleep = (done) => {
+  exec('sleep 10');
+  done();
+};
+const compileTs = gulp.series(clearOldTs, buildNewTs, sleep, compileJs);
+gulp.task("compile-ts", compileTs);
 
-gulp.task("build", ["compile-sass"]);
-gulp.task("grow-build", ["compile-sass"]);
-gulp.task("default", ["compile-sass", "watch-sass"]);
+gulp.task("build", gulp.parallel(compileSass, compileTs));
+gulp.task("grow-build", gulp.parallel(compileSass));
+gulp.task("default", gulp.parallel(compileSass, compileTs, watchSass, watchTs));
