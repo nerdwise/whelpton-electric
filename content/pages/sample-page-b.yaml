@@ -1,8 +1,0 @@
-$title: Sample Page B
-$order: -1
-description: A basic Grow demo website.
-
-ng_controller: BController
-
-components:
-- component: nav
