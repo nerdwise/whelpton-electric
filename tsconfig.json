@@ -1,0 +1,12 @@
+{
+  "include": ["./global/main.ts", "./components/**/*.ts"],
+  "compilerOptions": {
+    "lib": ["es6", "dom"],
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "target": "es5",
+    "outDir": "./tmp/",
+    "module": "es6"
+  }
+}
