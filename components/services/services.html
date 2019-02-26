@@ -3,37 +3,15 @@
     {{ component.title }}
   </h1>
   <div class="boxes">
+    {% for box in component.boxes %}
     <div class="box">
       <h4 class="box__title">
-        {{ component.box1.title }}
+        {{ box.title }}
       </h4>
-      <p class="box__desc">
-        {{ component.box1.desc }}
+      <p class="box__description">
+        {{ box.description }}
       </p>
     </div>
-    <div class="box">
-      <h4 class="box__title">
-        {{ component.box2.title }}
-      </h4>
-      <p class="box__desc">
-        {{ component.box2.desc }}
-      </p>
-    </div>
-    <div class="box">
-      <h4 class="box__title">
-        {{ component.box3.title }}
-      </h4>
-      <p class="box__desc">
-        {{ component.box3.desc }}
-      </p>
-    </div>
-    <div class="box">
-      <h4 class="box__title">
-        {{ component.box4.title }}
-      </h4>
-      <p class="box__desc">
-        {{ component.box4.desc }}
-      </p>
-    </div>
+    {% endfor %}
   </div>
 </section>
