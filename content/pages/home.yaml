@@ -9,8 +9,9 @@ ng_controller: BaseController
 
 components:
   - component: nav
-    logo: https://via.placeholder.com/450x150
-    logoalt: Whelpton Electric
+    logo:
+      url: https://via.placeholder.com/450x150
+      alt: Whelpton Electric
     phone: 555-555-5555
   - component: hero
     title: wow such title
