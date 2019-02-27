@@ -5,18 +5,11 @@
     class="nav__logo"
   />
   <ul class="nav__content">
-    <a href="#" class="nav__link">
-      <li class="nav__item">Home</li>
+    {% for link in component.links %}
+    <a href="{{ link.url }}" class="nav__link">
+      <li class="nav__item">{{ link.name }}</li>
     </a>
-    <a href="#" class="nav__link">
-      <li class="nav__item">Services</li>
-    </a>
-    <a href="#" class="nav__link">
-      <li class="nav__item">Projects</li>
-    </a>
-    <a href="#" class="nav__link">
-      <li class="nav__item">Contact</li>
-    </a>
+    {% endfor %}
     <li class="nav__item">{{ component.phone }}</li>
   </ul>
 </nav>

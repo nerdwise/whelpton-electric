@@ -1,3 +1,3 @@
-import shrinkScroll from "../components/nav/nav";
+import { Nav } from "../components/nav/nav";
 
-shrinkScroll();
+new Nav().startScrollWatcher();
