@@ -10,11 +10,11 @@
       <li class="nav__item">{{ link.name }}</li>
     </a>
     {% endfor %}
-    <button href="mailto:{{ component.email }}" class="nav__button">
+    <a href="mailto:{{ component.email }}" class="nav__button">
       {{ component.email }}
-    </button>
-    <button href="tel:{{ component.phone }}" class="nav__button">
+    </a>
+    <a href="tel:{{ component.phone }}" class="nav__button">
       {{ component.phone }}
-    </button>
+    </a>
   </ul>
 </nav>
