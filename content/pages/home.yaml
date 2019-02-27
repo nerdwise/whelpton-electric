@@ -14,6 +14,7 @@ components:
       alt: Whelpton Electric
     email: !g.yaml /content/data/contact.yaml?email
     phone: !g.yaml /content/data/contact.yaml?phone
+    email: !g.yaml /content/data/contact.yaml?email
     links:
       - name: Home
         url: /#
@@ -21,8 +22,6 @@ components:
         url: /#services
       - name: Projects
         url: /#projects
-      - name: Contact
-        url: /#contact
   - component: hero
     title: Whelpton Electric Logo or Slogan Here
   - component: services
