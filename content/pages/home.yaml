@@ -12,6 +12,7 @@ components:
     logo:
       url: https://via.placeholder.com/450x150
       alt: Whelpton Electric
+    email: !g.yaml /content/data/contact.yaml?email
     phone: !g.yaml /content/data/contact.yaml?phone
     links:
       - name: Home
@@ -35,8 +36,3 @@ components:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       - title: Fourth Title
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  - component: contact
-    title: Contact
-    info:
-      phone: !g.yaml /content/data/contact.yaml?phone
-      email: !g.yaml /content/data/contact.yaml?email
