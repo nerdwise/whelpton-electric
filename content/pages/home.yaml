@@ -15,6 +15,7 @@ components:
       alt: !g.string home.company_name.text
     email: !g.yaml /content/data/contact.yaml?email
     phone: !g.yaml /content/data/contact.yaml?phone
+    email: !g.yaml /content/data/contact.yaml?email
     links:
       - name: Home
         url: /#
