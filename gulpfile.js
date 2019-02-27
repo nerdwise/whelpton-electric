@@ -6,7 +6,7 @@ var rename = require("gulp-rename");
 var sass = require("gulp-sass");
 var webpack = require("webpack");
 var webpackStream = require("webpack-stream");
-var exec = require('gulp-exec');
+var exec = require("gulp-exec");
 
 var config = {
   TS_SOURCES: ["./global/*.ts", "./components/**/*.ts"],
@@ -41,9 +41,9 @@ var webpackProdConfig = extend(
 
 const compileJs = () => {
   return gulp
-      .src(config.JS_SOURCES)
-      .pipe(webpackStream(webpackProdConfig, webpack))
-      .pipe(gulp.dest(config.JS_OUT_DIR));
+    .src(config.JS_SOURCES)
+    .pipe(webpackStream(webpackProdConfig, webpack))
+    .pipe(gulp.dest(config.JS_OUT_DIR));
 };
 gulp.task("compile-js", compileJs);
 
@@ -76,20 +76,20 @@ gulp.task("watch-sass", watchSass);
 const watchTs = () => gulp.watch(config.TS_SOURCES, compileTs);
 gulp.task("watch-ts", watchTs);
 
-const clearOldTs = () =>{
-  return gulp.src('./tmp/js', {allowEmpty: true})
-      .pipe(exec('rm -rf <%= file.path %>'));
+const clearOldTs = () => {
+  return gulp
+    .src("./tmp/js", { allowEmpty: true })
+    .pipe(exec("rm -rf <%= file.path %>"));
 };
 gulp.task("clear-old-ts", clearOldTs);
 
 const buildNewTs = () => {
-  return gulp.src('./tsconfig.json')
-      .pipe(exec('tsc -p <%= file.path %>'));
+  return gulp.src("./tsconfig.json").pipe(exec("tsc -p <%= file.path %>"));
 };
 gulp.task("build-new-ts", buildNewTs);
 
-const sleep = (done) => {
-  exec('sleep 10');
+const sleep = done => {
+  exec("sleep 10");
   done();
 };
 const compileTs = gulp.series(clearOldTs, buildNewTs, sleep, compileJs);

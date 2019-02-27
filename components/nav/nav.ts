@@ -1,20 +1,22 @@
-const nav = <HTMLElement>document.querySelector(".nav");
-const navLogo = <HTMLElement>document.querySelector(".nav__logo");
-const navContent = <HTMLElement>document.querySelector(".nav__content");
+import { ActiveOnCondition } from "../../node_modules/toolbox-v2/src/toolbox/components/active-on-condition/base";
+import { Scroll } from "../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll";
 
-// Shrink navbar when the user scrolls
-const shrinkScroll = () => {
-  window.onscroll = () => {
-    if (window.pageYOffset > 30) {
-      nav.style.height = "5vh";
-      navLogo.style.height = "0";
-      navContent.style.height = "100%";
-    } else {
-      nav.style.height = "15vh";
-      navLogo.style.height = "7.5vh";
-      navContent.style.height = "50%";
-    }
-  };
-};
+class Nav {
+  private scrollWatcher_: ActiveOnCondition = null;
+  constructor() {}
+  startScrollWatcher(): void {
+    this.scrollWatcher_ = new ActiveOnCondition(
+      "nav",
+      () => {
+        return Scroll.getSingleton().getPosition().y > 30;
+      },
+      "minimal"
+    );
+  }
+  destroy(): void {
+    this.scrollWatcher_.destroy();
+    this.scrollWatcher_ = null;
+  }
+}
 
-export default shrinkScroll;
+export { Nav };

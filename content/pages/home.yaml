@@ -13,6 +13,15 @@ components:
       url: https://via.placeholder.com/450x150
       alt: Whelpton Electric
     phone: !g.yaml /content/data/contact.yaml?phone
+    links:
+      - name: Home
+        url: /#
+      - name: Services
+        url: /#services
+      - name: Projects
+        url: /#projects
+      - name: Contact
+        url: /#contact
   - component: hero
     title: Whelpton Electric Logo or Slogan Here
   - component: services
