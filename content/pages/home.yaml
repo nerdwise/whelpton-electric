@@ -12,7 +12,7 @@ components:
     logo:
       url: https://via.placeholder.com/450x150
       alt: Whelpton Electric
-    phone: 555-555-5555
+    phone: !g.yaml /content/data/contact.yaml?phone
   - component: hero
     title: Whelpton Electric Logo or Slogan Here
   - component: services
@@ -29,6 +29,5 @@ components:
   - component: contact
     title: Contact
     info:
-      phone: 555-555-5555
-      email: whelpton@electric.com
-      address: 123 Main Street, New York, NY
+      phone: !g.yaml /content/data/contact.yaml?phone
+      email: !g.yaml /content/data/contact.yaml?email
