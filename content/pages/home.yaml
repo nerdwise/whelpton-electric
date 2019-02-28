@@ -9,6 +9,7 @@ ng_controller: BaseController
 
 components:
   - component: nav
+    id: nav
     logo:
       url: https://via.placeholder.com/450x150
       alt: Whelpton Electric
@@ -22,8 +23,10 @@ components:
       - name: Projects
         url: /#projects
   - component: hero
+    id: hero
     title: Whelpton Electric Logo or Slogan Here
   - component: services
+    id: services
     title: Services
     boxes:
       - title: First Title
@@ -36,3 +39,4 @@ components:
         description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   - component: projects
     title: Projects
+    id: projects
