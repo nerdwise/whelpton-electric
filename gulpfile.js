@@ -1,14 +1,14 @@
-var extend = require("deep-extend");
-var gulp = require("gulp");
-var gulpAutoprefixer = require("gulp-autoprefixer");
-var path = require("path");
-var rename = require("gulp-rename");
-var sass = require("gulp-sass");
-var webpack = require("webpack");
-var webpackStream = require("webpack-stream");
-var exec = require("gulp-exec");
+const extend = require("deep-extend");
+const gulp = require("gulp");
+const gulpAutoprefixer = require("gulp-autoprefixer");
+const path = require("path");
+const rename = require("gulp-rename");
+const sass = require("gulp-sass");
+const webpack = require("webpack");
+const webpackStream = require("webpack-stream");
+const exec = require("gulp-exec");
 
-var config = {
+const config = {
   TS_SOURCES: ["./global/*.ts", "./components/**/*.ts"],
   JS_SOURCE_FILE: "./tmp/js/global/main.js",
   JS_SOURCES: ["./tmp/js/**/*.js"],
@@ -23,7 +23,7 @@ var config = {
   SASS_OUT_DIR: "./dist/css/"
 };
 
-var webpackConfig = {
+const webpackConfig = {
   entry: { main: config.JS_SOURCE_FILE },
   mode: "development",
   output: {
@@ -32,7 +32,7 @@ var webpackConfig = {
   }
 };
 
-var webpackProdConfig = extend(
+const webpackProdConfig = extend(
   {
     mode: "production"
   },
@@ -47,7 +47,7 @@ const compileJs = () => {
 };
 gulp.task("compile-js", compileJs);
 
-const compileSass = () => {
+const buildNewSass = () => {
   return gulp
     .src(config.SASS_SOURCE_FILE)
     .pipe(
@@ -68,6 +68,14 @@ const compileSass = () => {
     )
     .pipe(gulp.dest(config.SASS_OUT_DIR));
 };
+
+const touchSass = () => {
+  return gulp
+      .src("./dist/css/main.min.css", { allowEmpty: true })
+      .pipe(exec("touch <%= file.path %>"));
+};
+
+const compileSass = gulp.series(buildNewSass, touchSass);
 gulp.task("compile-sass", compileSass);
 
 const watchSass = () => gulp.watch(config.SASS_SOURCES, compileSass);
