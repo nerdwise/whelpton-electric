@@ -7,12 +7,12 @@ class Hero {
   constructor() {}
   startScrollEffect(): void {
     this.scrollEffect_ = new ScrollEffect(
-      <HTMLElement>document.querySelector(".hero"),
+      <HTMLElement>document.querySelector(".hero__background"),
       {
         effects: [
           new Tween([
-            [0.01, "tranform: scale(1.5)"],
-            [0.99, "transform: scale(1)"]
+            [0, "transform: translateY(0) scale(1)"],
+            [1, "transform: translateY(-5%) scale(1.1)"]
           ])
         ],
         getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
