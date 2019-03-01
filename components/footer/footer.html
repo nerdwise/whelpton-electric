@@ -1,0 +1,33 @@
+<footer class="footer">
+  <img
+    src="{{ component.logo.url }}"
+    alt="{{ component.logo.alt }}"
+    class="footer__logo"
+  />
+  <ul class="footer__info">
+    <li class="footer__item">
+      Whelpton Electric
+    </li>
+    <a href="mailto:{{ component.email }}" class="footer__link">
+      <li class="footer__item">
+        {{ component.email }}
+      </li>
+    </a>
+    <a href="tel:{{ component.phone }}" class="footer__link">
+      <li class="footer__item">
+        {{ component.phone }}
+      </li>
+    </a>
+  </ul>
+  <ul class="footer__links">
+    <a href="#" class="footer__link">
+      <li class="footer__item">Some link</li>
+    </a>
+    <a href="#" class="footer__link">
+      <li class="footer__item">Some link</li>
+    </a>
+    <a href="#" class="footer__link">
+      <li class="footer__item">Some link</li>
+    </a>
+  </ul>
+</footer>

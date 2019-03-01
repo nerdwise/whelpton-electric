@@ -40,3 +40,10 @@ components:
   - component: projects
     title: Projects
     id: projects
+  - component: footer
+    title: Footer
+    logo:
+      url: https://via.placeholder.com/450x150
+      alt: Whelpton Electric
+    email: !g.yaml /content/data/contact.yaml?email
+    phone: !g.yaml /content/data/contact.yaml?phone
