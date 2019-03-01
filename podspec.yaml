@@ -34,9 +34,10 @@ preprocessors:
   convert: true
 - kind: google_sheets
   name: gsheets
-  path: /content/data/gsheets-test.yaml
-  id: 1pVx63rj23SH3F56j6pE4jbj1V1XE9UGMdI18HCXG8TA
-  output_style: pretty
+  path: /content/strings/home.yaml
+  id: 1lsUOlyI8CuY05sVI4XNoYp6z-JK3-_UmvG-df53SFaU
+  gid: 818261604
+  format: grid
 
 static_dirs:
 - static_dir: /static/
