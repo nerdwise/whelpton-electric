@@ -6,7 +6,7 @@
   />
   <ul class="footer__info">
     <li class="footer__item">
-      Whelpton Electric
+      {{ component.brand }}
     </li>
     <a href="mailto:{{ component.email }}" class="footer__link">
       <li class="footer__item">
@@ -20,14 +20,12 @@
     </a>
   </ul>
   <ul class="footer__links">
-    <a href="#" class="footer__link">
-      <li class="footer__item">Some link</li>
+    {% for link in component.links %}
+    <a href="{{ link.url }}" class="footer__link">
+      <li class="footer__item">
+        {{ link.name }}
+      </li>
     </a>
-    <a href="#" class="footer__link">
-      <li class="footer__item">Some link</li>
-    </a>
-    <a href="#" class="footer__link">
-      <li class="footer__item">Some link</li>
-    </a>
+    {% endfor %}
   </ul>
 </footer>
