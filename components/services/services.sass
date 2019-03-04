@@ -1,8 +1,8 @@
 .services
   height: 65vh
-  background: linear-gradient(to bottom, $brand-color-light, $medium-neutral-color)
-  font-weight: 300
-  color: white
+  background: linear-gradient(to bottom, $services-background-start-color, $services-background-end-color)
+  +font-weight-light
+  color: $services-text-color
   display: flex
   flex-direction: column
   align-items: center
@@ -11,7 +11,7 @@
 .services__header
   +section-header
   margin-top: -2rem
-  font-weight: 300
+  +font-weight-light
 
 .boxes
   width: 80%
@@ -22,7 +22,7 @@
 
 .box
   border-radius: 5px
-  background: $light-neutral-color
+  background: $service-box-background-color
   width: 20%
   height: 100%
   text-align: center
@@ -30,9 +30,8 @@
   flex-direction: column
   align-items: center
   justify-content: space-evenly
-  color: $dark-neutral-color
+  color: $service-box-text-color
   padding: 1rem
-  color: $dark-neutral-color
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25) 
 
 .box__icon
@@ -40,7 +39,7 @@
 
 .box__title
   font-size: 1.6rem
-  font-weight: 300
+  +font-weight-light
 
 .box__desc
   font-size: 1rem
