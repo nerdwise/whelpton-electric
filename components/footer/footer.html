@@ -1,10 +1,10 @@
 <footer class="footer">
-  <img
-    src="{{ component.logo.url }}"
-    alt="{{ component.logo.alt }}"
-    class="footer__logo"
-  />
   <ul class="footer__info">
+    <a href="tel:{{ component.phone }}" class="footer__link">
+      <li class="footer__item">
+        {{ component.phone }}
+      </li>
+    </a>
     <li class="footer__item">
       {{ component.brand }}
     </li>
@@ -13,12 +13,12 @@
         {{ component.email }}
       </li>
     </a>
-    <a href="tel:{{ component.phone }}" class="footer__link">
-      <li class="footer__item">
-        {{ component.phone }}
-      </li>
-    </a>
   </ul>
+  <img
+    src="{{ component.logo.url }}"
+    alt="{{ component.logo.alt }}"
+    class="footer__logo"
+  />
   <ul class="footer__links">
     {% for link in component.links %}
     <a href="{{ link.url }}" class="footer__link">
