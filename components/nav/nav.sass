@@ -2,8 +2,8 @@
   height: 10vh
   width: 100%
   position: fixed
-  background: $light-neutral-color
-  color: $dark-neutral-color
+  background: $nav-background-color
+  color: $nav-text-color
   display: flex
   flex-direction: column
   align-items: center
@@ -26,15 +26,15 @@
 
 .nav__link
   text-decoration: none
-  color: $dark-neutral-color
+  color: $nav-text-color
   transition: .3s color
 
 .nav__link:hover 
-  color: black
+  color: $nav-text-hover-color
     
 .nav__button
   background: $nav-button-background-color
-  color: $dark-neutral-color
+  color: $nav-text-color
   text-decoration: none
   padding: 0.5rem 1.5rem
   border-radius: 50px
@@ -42,11 +42,12 @@
   +font-weight-regular
   transition-property: transform, box-shadow
   transition-duration: .3s
-  border: 1px solid rgba($dark-neutral-color, 0.5)
+  border: 1px solid $nav-button-border-color
+  cursor: pointer
 
 .nav__button:hover 
   transform: translateY(-2px)
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3)
+  +box-shadow
 
 .nav__button:active
   transform: translateY(0)
