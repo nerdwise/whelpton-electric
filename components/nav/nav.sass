@@ -1,8 +1,9 @@
 .nav
-  height: 15vh
+  height: 10vh
   width: 100%
   position: fixed
-  background: $dark-neutral-color
+  background: $light-neutral-color
+  color: $dark-neutral-color
   display: flex
   flex-direction: column
   align-items: center
@@ -14,47 +15,39 @@
 .nav--minimal
   height: 5vh
 
-  .nav__logo
-    height: 0
-
-  .nav__content
-    height: 100%
-
-.nav__logo
-  height: 50%
-  transition: .3s height
-
 .nav__content
-  height: 50%
-  width: 50%
+  height: 100%
+  width: 65%
   display: flex
   align-items: center
   justify-content: space-between
   transition: .3s height
+  font-size: 1.3rem
 
 .nav__link
   text-decoration: none
-  color: $light-neutral-color
+  color: $dark-neutral-color
   transition: .3s color
 
 .nav__link:hover 
-  color: white
+  color: black
     
 .nav__button
-  background: #e2e2e2
-  color: #0f0f0f
+  background: $nav-button-background-color
+  color: $dark-neutral-color
   text-decoration: none
   padding: 0.5rem 1.5rem
   border-radius: 50px
   font-size: 1rem
   +font-weight-regular
-  transition-property: transform, background, color
+  transition-property: transform, box-shadow
   transition-duration: .3s
+  border: 1px solid rgba($dark-neutral-color, 0.5)
 
 .nav__button:hover 
-  background: white
-  color: black
   transform: translateY(-2px)
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3)
 
 .nav__button:active
   transform: translateY(0)
+  box-shadow: 0 0 0

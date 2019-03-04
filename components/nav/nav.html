@@ -1,20 +1,15 @@
 <nav class="nav">
-  <img
-    src="{{ component.logo.url }}"
-    alt="{{ component.logo.alt }}"
-    class="nav__logo"
-  />
   <ul class="nav__content">
+    <a href="mailto:{{ component.email }}" class="nav__button">
+      Email Now
+    </a>
     {% for link in component.links %}
     <a href="{{ link.url }}" class="nav__link">
       <li class="nav__item">{{ link.name }}</li>
     </a>
     {% endfor %}
-    <a href="mailto:{{ component.email }}" class="nav__button">
-      {{ component.email }}
-    </a>
     <a href="tel:{{ component.phone }}" class="nav__button">
-      {{ component.phone }}
+      Call Now
     </a>
   </ul>
 </nav>
