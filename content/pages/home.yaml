@@ -11,7 +11,7 @@ components:
   - component: nav
     id: nav
     logo:
-      url: https://via.placeholder.com/450x150
+      url: /static/images/we-mountains-color.png
       alt: !g.string home.company_name.text
     email: !g.yaml /content/data/contact.yaml?email
     phone: !g.yaml /content/data/contact.yaml?phone
