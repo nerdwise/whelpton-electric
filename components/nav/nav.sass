@@ -1,5 +1,5 @@
 @import ../../global/sass-config/_mixins
-  
+
 .nav
   height: 10vh
   width: 100%
@@ -19,7 +19,7 @@
   height: 5vh
 
 .nav__brand
-  height: 100%
+  height: 75%
   width: 25%
   display: flex
   justify-content: center
@@ -42,7 +42,7 @@
   color: $nav-text-color
   transition: .3s color
 
-.nav__link:hover 
+.nav__link:hover
   color: $nav-text-hover-color
 
 .nav__buttons
@@ -52,7 +52,7 @@
   height: 100%
   justify-content: space-evenly
   width: 25%
-    
+
 .nav__button
   +nav-button-gradient(to bottom)
   color: $nav-button-text-color
@@ -65,7 +65,7 @@
   transition-duration: .3s
   cursor: pointer
 
-.nav__button:hover 
+.nav__button:hover
   transform: translateY(-2px)
   +button-shadow
 

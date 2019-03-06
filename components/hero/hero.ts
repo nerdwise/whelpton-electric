@@ -11,7 +11,7 @@ class Hero {
   startScrollEffect(): void {
     const translateY = ((this.scale_ - 1) / 2) * -100;
     this.scrollEffect_ = new ScrollEffect(
-      <HTMLElement>document.querySelector(".hero__logo"),
+      <HTMLElement>document.querySelector(".hero"),
       {
         effects: [
           new Tween([
