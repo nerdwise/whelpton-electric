@@ -54,8 +54,8 @@
   width: 25%
     
 .nav__button
-  background: $nav-button-background-color
-  color: $nav-text-color
+  +nav-button-gradient(to bottom)
+  color: $nav-button-text-color
   text-decoration: none
   padding: 0.5rem 1.5rem
   +border-radius
@@ -63,7 +63,6 @@
   +font-weight-regular
   transition-property: transform, box-shadow
   transition-duration: .3s
-  border: 1px solid $nav-button-border-color
   cursor: pointer
 
 .nav__button:hover 
