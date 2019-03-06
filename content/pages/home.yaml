@@ -31,13 +31,11 @@ components:
     title: Services
     boxes:
       - title: !g.string home.service1_title.text
-        description: !g.string home.service1_description.text
+        icon: fas fa-industry
       - title: !g.string home.service2_title.text
-        description: !g.string home.service2_description.text
+        icon: fas fa-store
       - title: !g.string home.service3_title.text
-        description: !g.string home.service3_description.text
-      - title: !g.string home.service4_title.text
-        description: !g.string home.service4_description.text
+        icon: fas fa-home
   - component: projects
     title: Projects
     id: projects
