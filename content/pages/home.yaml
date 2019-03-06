@@ -44,7 +44,7 @@ components:
     title: Footer
     brand: !g.string home.company_name.text
     logo:
-      url: /static/images/we-mountains-color.png
+      url: /static/images/we-logo.svg
       alt: !g.string home.company_name.text
     email: !g.yaml /content/data/contact.yaml?email
     phone: !g.yaml /content/data/contact.yaml?phone
