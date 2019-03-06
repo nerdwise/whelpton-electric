@@ -1,8 +1,10 @@
+@import ../../global/sass-config/_mixins
+  
 .nav
   height: 10vh
   width: 100%
   position: fixed
-  background: $nav-background-color
+  +grey-color-gradient(to top)
   color: $nav-text-color
   display: flex
   flex-direction: column
