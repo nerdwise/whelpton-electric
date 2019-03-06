@@ -1,3 +1,5 @@
+@import ../../global/sass-config/_mixins
+  
 .nav
   height: 10vh
   width: 100%
@@ -11,6 +13,7 @@
   +font-weight-light
   transition: .3s height
   z-index: 2
+  +box-shadow
 
 .nav--minimal
   height: 5vh
@@ -47,7 +50,7 @@
 
 .nav__button:hover 
   transform: translateY(-2px)
-  +box-shadow
+  +button-shadow
 
 .nav__button:active
   transform: translateY(0)
