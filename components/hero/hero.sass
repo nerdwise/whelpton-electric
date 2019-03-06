@@ -1,10 +1,11 @@
 @import ../../global/sass-config/_mixins
-  
+
 .hero
   position: relative
   height: 85vh
   width: 100%
   display: flex
+  flex-direction: column
   align-items: center
   justify-content: center
 
@@ -13,6 +14,17 @@
   background-size: cover
   background-repeat: no-repeat
   background-position: center
-  position: absolute
-  +size-square(40%)
+  +size-square(30%)
   z-index: -1
+
+.hero__header
+  font-size: 7.5rem
+  +font-weight-light
+  text-transform: uppercase
+  color: $hero-header-color
+
+.hero__subheader
+  font-size: 4rem
+  text-transform: lowercase
+  color: $hero-subheader-color
+  +font-weight-thin

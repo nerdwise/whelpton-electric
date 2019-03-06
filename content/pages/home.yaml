@@ -11,7 +11,7 @@ components:
   - component: nav
     id: nav
     logo:
-      url: /static/images/we-logo-color.svg
+      url: /static/images/we-logo.svg
       alt: !g.string home.company_name.text
     email: !g.yaml /content/data/contact.yaml?email
     phone: !g.yaml /content/data/contact.yaml?phone
@@ -25,7 +25,8 @@ components:
   - component: background
   - component: hero
     id: hero
-    title: Whelpton Electric Logo or Slogan Here
+    header: Whelpton
+    subheader: Electric
   - component: services
     id: services
     title: Services
