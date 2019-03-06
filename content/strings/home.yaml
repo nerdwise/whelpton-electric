@@ -1,20 +1,10 @@
 company_name:
   text@: Whelpton Electric
-service1_description:
-  text@: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 service1_title:
-  text@: First Title
-service2_description:
-  text@: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  text@: Industrial
 service2_title:
-  text@: Second Title
-service3_description:
-  text@: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  text@: Commercial
 service3_title:
-  text@: Third Title
-service4_description:
-  text@: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-service4_title:
-  text@: Fourth Title
+  text@: Residential
 title:
   text@: Home
