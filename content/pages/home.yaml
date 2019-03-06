@@ -22,6 +22,7 @@ components:
         url: /#services
       - name: Projects
         url: /#projects
+  - component: background
   - component: hero
     id: hero
     title: Whelpton Electric Logo or Slogan Here
