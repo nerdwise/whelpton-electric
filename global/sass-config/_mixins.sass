@@ -29,3 +29,10 @@
 =size-square($size)
   height: $size
   width: $size
+
+// Gradients
+=brand-color-gradient($direction)
+  background: linear-gradient($direction, $services-background-start-color, rgba($services-background-end-color, 0.8))
+
+=grey-color-gradient($direction)
+  background: linear-gradient($direction, $grey-gradient-start-color, $grey-gradient-end-color, $grey-gradient-start-color)

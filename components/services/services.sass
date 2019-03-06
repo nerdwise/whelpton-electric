@@ -1,6 +1,8 @@
+@import ../../global/sass-config/_mixins
+  
 .services
   height: 65vh
-  background: linear-gradient(to bottom, $services-background-start-color, $services-background-end-color)
+  +brand-color-gradient(to bottom)
   +font-weight-light
   color: $services-text-color
   display: flex
@@ -22,7 +24,7 @@
 
 .box
   border-radius: 5px
-  background: $service-box-background-color
+  +grey-color-gradient(to right)
   width: 20%
   height: 100%
   text-align: center
