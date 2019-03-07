@@ -1,0 +1,14 @@
+.testimonials
+  height: 65vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-evenly
+
+.testimonials__header
+  +section-header
+  margin-top: -2rem
+
++media($mobile)
+  .testimonials__header
+    font-size: $section-header-font-size--mobile
