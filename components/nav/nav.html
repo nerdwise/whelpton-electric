@@ -1,11 +1,11 @@
 <nav class="nav">
-  <div class="nav__brand">
+  <a href="/" class="nav__brand">
     <img
       src="{{ component.logo.url }}"
       alt="{{ component.logo.alt }}"
       class="nav__logo"
     />
-  </div>
+  </a>
   <ul class="nav__links">
     {% for link in component.links %}
     <a href="{{ link.url }}" class="nav__link">
