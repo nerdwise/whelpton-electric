@@ -2,6 +2,7 @@
   
 .services
   height: 65vh
+  width: 100%
   +brand-color-gradient(to bottom)
   +font-weight-light
   color: $services-text-color
@@ -46,3 +47,33 @@
 .box__title
   font-size: $services-box-header-font-size
   +font-weight-light
+
++media($tablet-landscape)
+  .boxes
+    width: 100%
+  .box
+    width: 28%
+
++media($tablet-portrait)
+  .services
+    height: 150vh
+  .services__header
+    margin-top: 0
+  .boxes
+    height: 80%
+    flex-direction: column
+    width: 100%
+  .box
+    width: 50%
+    margin: 1rem 0
+
++media($mobile)
+  .services
+    height: 175vh
+  .services__header
+    font-size: 2rem
+    margin-bottom: -1rem
+  .boxes
+    height: 90%
+  .box
+    width: 65%
