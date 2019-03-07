@@ -33,7 +33,11 @@
   justify-content: center
   color: $service-box-text-color
   padding: 1rem
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25) 
+  +box-shadow
+  transition: transform .3s
+
+.box:hover 
+  +slide-up(-5%)
 
 .box__icon
   height: 60%
