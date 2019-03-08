@@ -73,21 +73,22 @@
   transform: translateY(0)
   box-shadow: 0 0 0
 
-+media($tablet-landscape)
-  .nav__links
-    width: 33%
-  .nav__brand
-    width: 33%
-  .nav__buttons
-    width: 33%
-    flex-direction: column
+.nav__menu
+  display: none
+  transition: transform .3s
 
-+media($tablet-portrait)
++media($tablet-landscape)
   .nav__links
     display: none
   .nav__buttons
-    width: 66%
-    flex-direction: row
+    display: none
+  .nav__menu
+    display: block
+    margin-right: 3rem
+
++media($tablet-portrait)
+  .nav__menu
+    margin-right: 2rem
 
 +media($mobile)
   .nav__brand
@@ -95,16 +96,10 @@
   .nav__logo
     height: 50%
     transition: height .3s
-  .nav__buttons
-    width: 70%
-    flex-direction: column
-    transition: visibility, opacity .3s
-  .nav__button
-    font-size: $nav-button-font-size--mobile
-    padding: 0.2rem 0.6rem
   .nav--minimal
     .nav__logo
       height: 100%
-    .nav__buttons
-      visibility: hidden
-      opacity: 0
+    .nav__menu
+      transform: scale(0.75)
+  .nav__menu
+    margin-right: 1rem
