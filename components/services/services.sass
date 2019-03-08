@@ -43,6 +43,9 @@
 .box__icon
   color: $service-box-icon-color
 
+.box__icon--mobile
+  display: none
+
 .box__title
   font-size: $services-box-header-font-size
   +font-weight-light
@@ -81,3 +84,7 @@
     height: 90%
   .box
     width: 65%
+  .box__icon
+    display: none
+  .box__icon--mobile
+    display: block
