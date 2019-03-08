@@ -16,7 +16,8 @@
   background-size: cover
   background-repeat: no-repeat
   background-position: center
-  +size-square(30%)
+  height: 30%
+  width: 50%
   z-index: -1
 
 .hero__header
@@ -31,14 +32,22 @@
   color: $hero-subheader-color
   +font-weight-thin
 
++media($tablet-landscape)
+  .hero__logo
+    width: 80%
+
 +media($tablet-portrait)
   .hero__header
     font-size: $hero-header-font-size--tablet-portrait
   .hero__subheader
     font-size: $hero-subheader-font-size--tablet-portrait
+  .hero__logo
+    height: 25%
 
 +media($mobile)
   .hero__header
     font-size: $hero-header-font-size--mobile
   .hero__subheader
     font-size: $hero-subheader-font-size--mobile
+  .hero__logo
+    height: 20%
