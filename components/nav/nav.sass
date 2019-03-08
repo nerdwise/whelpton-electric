@@ -12,7 +12,7 @@
   justify-content: space-between
   +font-weight-light
   transition: .3s height
-  z-index: 2
+  z-index: 3
   +box-shadow
 
 .nav--minimal
@@ -77,6 +77,48 @@
   display: none
   transition: transform .3s
 
+// Mobile nav
+.nav--mobile
+  position: fixed
+  top: 10vh
+  left: 0
+  width: 100%
+  background: $mobile-nav-background-color
+  z-index: 2
+  transform: translateY(-100%)
+  transition: transform .5s
+
+.display-nav
+  transform: translateY(0)
+
+.nav__content--mobile
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-evenly
+  padding: 1rem 0
+
+.nav__link--mobile
+  color: $nav-text-color
+  text-decoration: none
+
+.nav__item--mobile
+  margin: 1rem 0
+
+.nav__item--mobile:nth-of-type(even)
+  background: white
+
+.nav__button--mobile
+  +nav-button-gradient(to bottom)
+  color: $nav-button-text-color
+  text-decoration: none
+  padding: 0.5rem 1.5rem
+  +border-radius
+  font-size: $nav-button-font-size--mobile
+  +font-weight-regular
+  margin: .5rem 0
+
 +media($tablet-landscape)
   .nav__links
     display: none
@@ -85,6 +127,8 @@
   .nav__menu
     display: block
     margin-right: 3rem
+  .nav--minimal
+    height: 10vh
 
 +media($tablet-portrait)
   .nav__menu
@@ -96,10 +140,5 @@
   .nav__logo
     height: 50%
     transition: height .3s
-  .nav--minimal
-    .nav__logo
-      height: 100%
-    .nav__menu
-      transform: scale(0.75)
   .nav__menu
     margin-right: 1rem

@@ -27,3 +27,22 @@
   </ul>
   <i class="fas fa-bars fa-2x nav__menu"></i>
 </nav>
+<div class="nav--mobile">
+  <ul class="nav__content--mobile">
+    {% for link in component.links %}
+    <a href="{{ link.url }}" class="nav__link--mobile">
+      <li class="nav__item--mobile">{{ link.name }}</li>
+    </a>
+    {% endfor %}
+    <a href="tel:{{ component.phone }}">
+      <button class="nav__button--mobile">
+        {{ component.phone }} <i class="fas fa-phone"></i>
+      </button>
+    </a>
+    <a href="mailto:{{ component.email }}">
+      <button class="nav__button--mobile">
+        {{ component.email }} <i class="fas fa-envelope"></i>
+      </button>
+    </a>
+  </ul>
+</div>
