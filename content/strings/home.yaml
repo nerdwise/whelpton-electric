@@ -1,9 +1,14 @@
 company_name:
   text@: Whelpton Electric
+service1_description:
+  text@: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 service1_title:
   text@: Industrial
+service2_description:
+  text@: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 service2_title:
   text@: Commercial
+service3_description: {}
 service3_title:
   text@: Residential
 title:

@@ -33,20 +33,24 @@
   align-items: center
   justify-content: center
   color: $service-box-text-color
-  padding: 1rem
   +box-shadow
+  padding: 0 1rem
   transition: transform .3s
 
 .box:hover 
   +slide(-5%)
 
 .box__icon
-  height: 60%
   color: $service-box-icon-color
 
 .box__title
   font-size: $services-box-header-font-size
   +font-weight-light
+  margin: 1rem
+
+.box__description
+  +font-weight-light
+  font-size: $services-box-description-font-size
 
 +media($tablet-landscape)
   .boxes
