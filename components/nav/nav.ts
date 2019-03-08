@@ -13,6 +13,14 @@ class Nav {
       "minimal"
     );
   }
+  expandNav(): void {
+    const navMenu: HTMLElement = document.querySelector(".nav__menu");
+    const mobileNav: HTMLElement = document.querySelector(".nav--mobile");
+
+    navMenu.onclick = () => {
+      mobileNav.classList.toggle("display-nav");
+    };
+  }
   destroy(): void {
     this.scrollWatcher_.destroy();
     this.scrollWatcher_ = null;
