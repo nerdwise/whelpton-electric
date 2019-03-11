@@ -16,8 +16,6 @@ components:
     email: !g.yaml /content/data/contact.yaml?email
     phone: !g.yaml /content/data/contact.yaml?phone
     links:
-      - name: Home
-        url: /#
       - name: Services
         url: /#services
       - name: Projects
