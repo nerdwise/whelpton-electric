@@ -1,0 +1,37 @@
+.about
+  height: 65vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-evenly
+
+.about__header
+  +section-header
+  margin-top: -2rem
+
+.about__text
+  width: 50%
+  color: $about-font-color
+
+.about__paragraph
+  margin: 1rem
+  line-height: 1.5rem
+  font-size: $about-text-font-size
+  text-align: center
+
++media($tablet-landscape)
+  .about__text
+    width: 80%
+  
++media($tablet-portrait)
+  .about__paragraph
+    font-size: $about-text-font-size--tablet-portrait
+
++media($mobile)
+  .about__header
+    font-size: $section-header-font-size--mobile
+  .about__text
+    width: 90%
+  .about__paragraph
+    font-size: $about-text-font-size--mobile
+    line-height: 1.2rem
