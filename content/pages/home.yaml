@@ -3,7 +3,7 @@ $path: /{root}/
 $localization:
   path: /{locale}/{root}/
 $order: -1
-description: A basic Grow demo website.
+description: Whelpton Electric - Based in Agassiz
 
 ng_controller: BaseController
 
@@ -56,10 +56,3 @@ components:
       alt: !g.string home.company_name.text
     email: !g.yaml /content/data/contact.yaml?email
     phone: !g.yaml /content/data/contact.yaml?phone
-    links:
-    - url: #
-      name: Some link
-    - url: #
-      name: Some link
-    - url: #
-      name: Some link
