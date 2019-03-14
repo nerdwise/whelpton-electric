@@ -2,4 +2,9 @@
   <h1 class="projects__header">
     {{ component.title }}
   </h1>
+  <div class="gallery">
+    {% for image in component.images %}
+    <img src="{{ image.url }}" alt="{{ image.alt }}" class="gallery__image" />
+    {% endfor %}
+  </div>
 </section>
