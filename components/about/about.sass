@@ -1,17 +1,20 @@
 .about
-  height: 65vh
+  min-height: 85vh
   display: flex
   flex-direction: column
   align-items: center
   justify-content: space-evenly
+  opacity: 0
+  animation: fadein 1s forwards 0.5s
 
 .about__header
   +section-header
-  margin-top: -2rem
+  margin-top: calc(10vh + 2rem)
 
 .about__text
   width: 50%
   color: $about-font-color
+  margin-bottom: 2rem
 
 .about__paragraph
   margin: 1rem
@@ -21,17 +24,24 @@
 
 +media($tablet-landscape)
   .about__text
-    width: 80%
+    width: 60%
+  .about__paragraph
+    line-height: 1.8rem
+    margin: 1.5rem
+
   
 +media($tablet-portrait)
+  .about__text
+    width: 80%
   .about__paragraph
     font-size: $about-text-font-size--tablet-portrait
+    line-height: 1.6rem
 
 +media($mobile)
   .about__header
     font-size: $section-header-font-size--mobile
   .about__text
-    width: 90%
+    width: 95%
   .about__paragraph
     font-size: $about-text-font-size--mobile
     line-height: 1.2rem

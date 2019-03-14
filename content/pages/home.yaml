@@ -23,7 +23,7 @@ components:
       - name: Projects
         url: /#projects
       - name: About
-        url: /#about
+        url: /about
   - component: background
   - component: hero
     id: hero
@@ -45,9 +45,6 @@ components:
   - component: projects
     title: Projects
     id: projects
-  - component: about
-    title: About
-    id: about
   - component: footer
     title: Footer
     brand: !g.string home.company_name.text
