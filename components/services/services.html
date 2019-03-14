@@ -4,7 +4,7 @@
   </h1>
   <div class="boxes">
     {% for box in component.boxes %}
-    <div class="box">
+    <div class="{{ box.class }}">
       <img src="{{ box.icon }}" alt="" />
       <h4 class="box__title">
         {{ box.title }}
@@ -12,4 +12,16 @@
     </div>
     {% endfor %}
   </div>
+  {% for modal in component.boxes %}
+  <div class="{{ modal.modalclass }}">
+    <div class="{{ modal.modalcontentclass }}">
+      <i class="fas fa-times fa-2x modal__x"></i>
+      <img class="modal__image" src="{{ modal.modalimage }}" alt="" />
+      <h4 class="modal__title">
+        {{ modal.title }}
+      </h4>
+      <p class="modal__description">{{ modal.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
 </section>
