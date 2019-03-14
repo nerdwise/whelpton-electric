@@ -21,7 +21,7 @@ components:
       - name: Services
         url: /#services
       - name: Projects
-        url: /#projects
+        url: /projects
       - name: About
         url: /about
   - component: background
@@ -42,9 +42,6 @@ components:
       - title: !g.string home.service3_title.text
         description: !g.string home.service1_description.text
         icon: /static/images/house.svg
-  - component: projects
-    title: Projects
-    id: projects
   - component: footer
     title: Footer
     brand: !g.string home.company_name.text

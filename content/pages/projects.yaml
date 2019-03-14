@@ -1,8 +1,8 @@
 $title: About
 $order: -1
-description: About the company
+description: View our work
 
-ng_controller: AboutController
+ng_controller: ProjectsController
 
 components:
 - component: nav
@@ -22,9 +22,9 @@ components:
     - name: About
       url: /about
 - component: background
-- component: about
-  title: About
-  id: about
+- component: projects
+  title: Projects
+  id: projects
 - component: footer
   title: Footer
   brand: !g.string home.company_name.text

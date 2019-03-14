@@ -1,13 +1,15 @@
 .projects
-  height: 65vh
+  min-height: 85vh
   display: flex
   flex-direction: column
   align-items: center
   justify-content: space-evenly
+  opacity: 0
+  animation: fadein 1s forwards 0.5s
 
 .projects__header
   +section-header
-  margin-top: -2rem
+  margin-top: calc(10vh + 2rem)
 
 +media($mobile)
   .projects__header
