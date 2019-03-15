@@ -66,10 +66,10 @@
   justify-content: center
   animation: 0.5s fadein forwards
   overflow: auto
-  background-color: $service-modal-background-color
+  +brand-color-gradient(to bottom) 
 
 .modal__content
-  background-color: $service-modal-content-background-color
+  +grey-color-gradient(to right)
   width: 50%
   height: 50%
   margin: auto
@@ -83,8 +83,9 @@
 
 .modal__x
   position: absolute
+  font-size: $services-modal-x-font-size
   top: 1rem
-  right: 1rem
+  right: 1.5rem
   color: $service-modal-font-color
   cursor: pointer
 
