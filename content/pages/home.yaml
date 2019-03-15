@@ -34,29 +34,36 @@ components:
     title: Services
     boxes:
       - title: !g.string home.service1_title.text
-        description: !g.string home.service1_description.text
         icon: /static/images/factory.svg
         class: box box--1
         target: modal--1
-        modalclass: modal modal--1
-        modalcontentclass: modal__content modal__content--1
-        modalimage: https://via.placeholder.com/350x150
       - title: !g.string home.service2_title.text
-        description: !g.string home.service1_description.text
         icon: /static/images/store-front.svg
         class: box box--2
         target: modal--2
-        modalclass: modal modal--2
-        modalcontentclass: modal__content modal__content--2
-        modalimage: https://via.placeholder.com/350x150
       - title: !g.string home.service3_title.text
-        description: !g.string home.service1_description.text
         icon: /static/images/house.svg
         class: box box--3
         target: modal--3
-        modalclass: modal modal--3
-        modalcontentclass: modal__content modal__content--3
-        modalimage: https://via.placeholder.com/350x150
+    modals:
+      - class: modal modal--1
+        contentclass: modal__content modal__content--1
+        image: https://via.placeholder.com/350x150
+        target: modal--1
+        title: !g.string home.service1_title.text
+        description: !g.string home.service1_description.text
+      - class: modal modal--2
+        contentclass: modal__content modal__content--2
+        image: https://via.placeholder.com/350x150
+        target: modal--2
+        title: !g.string home.service2_title.text
+        description: !g.string home.service1_description.text
+      - class: modal modal--3
+        contentclass: modal__content modal__content--3
+        image: https://via.placeholder.com/350x150
+        target: modal--3
+        title: !g.string home.service3_title.text
+        description: !g.string home.service1_description.text
   - component: footer
     title: Footer
     brand: !g.string home.company_name.text
