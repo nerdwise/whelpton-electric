@@ -19,7 +19,7 @@ components:
     phone: !g.yaml /content/data/contact.yaml?phone
     links:
       - name: Services
-        url: /#services
+        url: '#services'
       - name: Projects
         url: /projects
       - name: About
