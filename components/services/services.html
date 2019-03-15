@@ -4,7 +4,7 @@
   </h1>
   <div class="boxes">
     {% for box in component.boxes %}
-    <div class="{{ box.class }}">
+    <div class="{{ box.class }}" data-target="{{ box.target }}">
       <img src="{{ box.icon }}" alt="" />
       <h4 class="box__title">
         {{ box.title }}
@@ -15,7 +15,10 @@
   {% for modal in component.boxes %}
   <div class="{{ modal.modalclass }}">
     <div class="{{ modal.modalcontentclass }}">
-      <i class="fas fa-times fa-2x modal__x"></i>
+      <i
+        class="fas fa-times fa-2x modal__x"
+        data-target="{{ modal.target }}"
+      ></i>
       <img class="modal__image" src="{{ modal.modalimage }}" alt="" />
       <h4 class="modal__title">
         {{ modal.title }}
