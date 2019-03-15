@@ -11,27 +11,27 @@ class Services {
   modal3: HTMLElement = document.querySelector(".modal--3");
   openModal(): void {
     this.box1.onclick = () => {
-      this.modal1.style.display = "flex";
+      this.modal1.classList.toggle("open");
     };
     this.box2.onclick = () => {
-      this.modal2.style.display = "flex";
+      this.modal2.classList.toggle("open");
     };
     this.box3.onclick = () => {
-      this.modal3.style.display = "flex";
+      this.modal3.classList.toggle("open");
     };
   }
   closeModal(): void {
     window.onclick = event => {
       this.modals.forEach((modal: HTMLElement) => {
         if (event.target == modal) {
-          modal.style.display = "none";
+          modal.classList.toggle("open");
         }
       });
     };
     this.x.forEach((x: HTMLElement) => {
       x.onclick = event => {
         this.modals.forEach((modal: HTMLElement) => {
-          modal.style.display = "none";
+          modal.classList.remove("open");
         });
       };
     });
