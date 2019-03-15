@@ -19,12 +19,19 @@
   flex-wrap: wrap
   align-items: center
   justify-content: space-evenly
+  margin: 2rem 0
 
 .gallery__image
   width: 20%
   height: auto
   margin: 2.5%
 
++media($tablet-landscape)
+  .gallery__image
+    width: 45%
+
 +media($mobile)
   .projects__header
     font-size: $section-header-font-size--mobile
+  .gallery__image
+    width: 95%
