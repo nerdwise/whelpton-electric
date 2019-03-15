@@ -9,5 +9,6 @@ nav.expandNav();
 const services = new Services();
 services.openModal();
 services.closeModal();
+services.startScrollEffect();
 
 new Hero(1.1).startScrollEffect();
