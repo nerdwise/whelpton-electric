@@ -15,10 +15,7 @@
   {% for modal in component.modals %}
   <div class="{{ modal.class }}">
     <div class="{{ modal.contentclass }}">
-      <i
-        class="fas fa-times fa-2x modal__x"
-        data-target="{{ modal.target }}"
-      ></i>
+      <span data-target="{{ modal.target }}" class="modal__x">&times;</span>
       <img class="modal__image" src="{{ modal.image }}" alt="" />
       <h4 class="modal__title">
         {{ modal.title }}
