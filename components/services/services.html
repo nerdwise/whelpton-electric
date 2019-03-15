@@ -12,14 +12,14 @@
     </div>
     {% endfor %}
   </div>
-  {% for modal in component.boxes %}
-  <div class="{{ modal.modalclass }}">
-    <div class="{{ modal.modalcontentclass }}">
+  {% for modal in component.modals %}
+  <div class="{{ modal.class }}">
+    <div class="{{ modal.contentclass }}">
       <i
         class="fas fa-times fa-2x modal__x"
         data-target="{{ modal.target }}"
       ></i>
-      <img class="modal__image" src="{{ modal.modalimage }}" alt="" />
+      <img class="modal__image" src="{{ modal.image }}" alt="" />
       <h4 class="modal__title">
         {{ modal.title }}
       </h4>
