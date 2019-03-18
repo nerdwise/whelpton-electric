@@ -28,11 +28,13 @@ preprocessors:
   kind: gulp
   build_task: grow-build
 - kind: google_docs
+  autorun: false
   name: gdocs
   path: /content/data/gdocs-test.md
   id: 1G2h_UCwEFQG48iqt5zY368mXBccM1RZ9pBBgHlL6980
   convert: true
 - kind: google_sheets
+  autorun: false
   name: gsheets
   path: /content/strings/home.yaml
   id: 1lsUOlyI8CuY05sVI4XNoYp6z-JK3-_UmvG-df53SFaU
