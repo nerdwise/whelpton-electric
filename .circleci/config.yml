@@ -1,49 +1,58 @@
 version: 2
 
+node_version: &node_version
+  name: Node Version
+  command: node -v > node_version.txt
+
+cache_restore: &cache_restore
+  keys:
+  - &cache_key grow-cache-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "node_version.txt" }}
+
+cache_save: &cache_save
+  key: *cache_key
+  paths:
+  - extensions
+  - node_modules
+
 grow_install: &grow_install
   name: Grow Intall
   command: grow install
+
+base_deploy: &base_deploy
+  working_directory: ~/grow
+  docker:
+  - image: grow/base:latest
 
 grow_build: &grow_build
   name: Grow Build
   command: grow build
 
 jobs:
-  build:
-    working_directory: ~/grow
-    docker:
-    - image: grow/base:latest
+  stage:
+    <<: *base_deploy
     steps:
     - checkout
-    - restore_cache:
-        keys:
-        - &cache_key grow-cache-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+    - run: *node_version
+    - restore_cache: *cache_restore
+    - run:
+        name: Install Dependencies
+        command: make develop
     - run: *grow_install
-    - save_cache:
-        key: *cache_key
-        paths:
-        - node_modules
+    - save_cache: *cache_save
     - run: *grow_build
-
-  cache_free:
-    working_directory: ~/grow
-    docker:
-    - image: grow/base:latest
-    steps:
-    - checkout
-    - run: *grow_install
-    - run: *grow_build
-
+    - run:
+        name: Stage S3
+        command: make stage-s3
 
 workflows:
   version: 2
   build:
-    jobs: []
-#    - stage:
-#        filters:
-#          branches:
-#            only:
-#            - staging
+    jobs:
+    - stage:
+        filters:
+          branches:
+            only:
+            - master # Update to staging once live
 #    - deploy:
 #        filters:
 #          branches:
