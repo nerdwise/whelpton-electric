@@ -26,7 +26,7 @@ meta:
 preprocessors:
 - name: gulp
   kind: gulp
-  build_task: grow-build
+  autorun: true
 - kind: google_docs
   autorun: false
   name: gdocs
