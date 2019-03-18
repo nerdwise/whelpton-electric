@@ -51,3 +51,12 @@ static_dirs:
 
 sitemap:
   enabled: true
+
+deployments:
+  staging:
+    destination: local
+    out_dir: ./build/
+    env:
+      name: staging
+      host: whelpton-electric.s3-us-west-2.amazonaws.com
+      scheme: https
