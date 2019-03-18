@@ -1,7 +1,7 @@
 project ?= whelpton-electric
 version ?= auto
 
-staging_s3_bucket = https://whelpton-electric.s3-us-west-2.amazonaws.com
+staging_s3_bucket = whelpton-electric
 prod_s3_bucket = TODO
 
 develop:
