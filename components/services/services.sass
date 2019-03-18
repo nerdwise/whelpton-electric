@@ -1,5 +1,7 @@
-@import ../../global/sass-config/_mixins
-  
+@import ../../global/sass-config/colors
+@import ../../global/sass-config/font-sizes
+@import ../../global/sass-config/mixins
+
 .services
   height: 65vh
   width: 100%
@@ -25,6 +27,8 @@
 .box
   +border-radius
   +grey-color-gradient(to right)
+  +box-shadow
+  +slide(-2px)
   width: 20%
   height: 100%
   text-align: center
@@ -33,13 +37,13 @@
   align-items: center
   justify-content: center
   color: $service-box-text-color
-  +box-shadow
   padding: 0 1rem
   cursor: pointer
   transition: transform .3s
 
-.box:hover 
-  +slide(-5%)
+.box:hover
+  +box-shadow-hover
+  +slide(0)
 
 .box__icon
   color: $service-box-icon-color
@@ -51,7 +55,7 @@
 
 // Modal
 // -----
-.modal 
+.modal
   display: none
   position: fixed
   z-index: 1
@@ -66,7 +70,7 @@
   justify-content: center
   animation: 0.5s fadein forwards
   overflow: auto
-  +brand-color-gradient(to bottom) 
+  +brand-color-gradient(to bottom)
 
 .modal__content
   +grey-color-gradient(to right)
@@ -102,7 +106,7 @@
   font-size: $services-modal-description-font-size
   color: $service-modal-font-color
   text-align: center
-  
+
 +media($tablet-landscape)
   .boxes
     width: 100%
