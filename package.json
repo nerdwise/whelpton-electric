@@ -13,6 +13,7 @@
     "gulp-sass": "^4.0.2",
     "toolbox-v2": "git+https://github.com/angusm/toolbox-v2.git#5d15f1a6c0a690ebe87e32e5acb2d4d06dd7f60f",
     "tsc": "^1.20150623.0",
+    "typescript": "^3.3.3333",
     "webpack": "4.20.2",
     "webpack-stream": "5.1.1"
   }
