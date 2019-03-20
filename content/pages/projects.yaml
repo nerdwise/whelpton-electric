@@ -26,21 +26,33 @@ components:
   title: Projects
   id: projects
   images:
-  - url: https://via.placeholder.com/800x800
+  - url: /static/images/projects/projects1-min.jpeg
     alt: Image
-  - url: https://via.placeholder.com/800x800
+  - url: /static/images/projects/projects2-min.jpg
     alt: Image
-  - url: https://via.placeholder.com/800x800
+  - url: /static/images/projects/projects3-min.jpg
     alt: Image
-  - url: https://via.placeholder.com/800x800
+  - url: /static/images/projects/projects4-min.jpg
     alt: Image
-  - url: https://via.placeholder.com/800x800
+  - url: /static/images/projects/projects5-min.jpg
     alt: Image
-  - url: https://via.placeholder.com/800x800
+  - url: /static/images/projects/projects6-min.jpg
     alt: Image
-  - url: https://via.placeholder.com/800x800
+  - url: /static/images/projects/projects7-min.jpg
     alt: Image
-  - url: https://via.placeholder.com/800x800
+  - url: /static/images/projects/projects8-min.jpg
+    alt: Image
+  - url: /static/images/projects/projects9-min.jpg
+    alt: Image
+  - url: /static/images/projects/projects10-min.jpg
+    alt: Image
+  - url: /static/images/projects/projects11-min.jpg
+    alt: Image
+  - url: /static/images/projects/projects12-min.jpg
+    alt: Image
+  - url: /static/images/projects/projects13-min.jpg
+    alt: Image
+  - url: /static/images/projects/projects14-min.jpg
     alt: Image
 - component: footer
   title: Footer
