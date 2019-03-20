@@ -101,7 +101,27 @@
 
 .nav__menu
   display: none
-  transtion: transform .3s
+  margin-right: 1rem
+
+.nav__bar
+  width: 2rem
+  height: .3rem
+  background-color: $nav-menu-color
+  margin: .4rem
+  transition-property: transform, opacity
+  transition-duration: .3s
+
+.x
+  .nav__bar--1 
+    transform: rotate(-135deg) translate(-.35rem, -.6rem)
+
+.x
+  .nav__bar--2 
+    opacity: 0
+
+.x
+  .nav__bar--3
+    transform: rotate(135deg) translate(-.35rem, .6rem)
 
 // Mobile nav
 .nav--mobile
@@ -151,9 +171,6 @@
     display: none
   .nav__buttons
     display: none
-  .nav__menu
-    display: block
-    margin-right: 3rem
   .nav--minimal
     height: 10vh
     .nav__logo
@@ -162,10 +179,8 @@
     display: block
   .logo__text
     display: none
-
-+media($tablet-portrait)
   .nav__menu
-    margin-right: 2rem
+    display: inline-block
 
 +media($mobile)
   .nav__brand
@@ -173,8 +188,6 @@
   .nav__logo
     height: 50%
     transition: height .3s
-  .nav__menu
-    margin-right: 1rem
   .nav--minimal
     .nav__logo
       height: 50%

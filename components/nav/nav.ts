@@ -19,8 +19,7 @@ class Nav {
 
     navMenu.onclick = () => {
       mobileNav.classList.toggle("display-nav");
-      navMenu.classList.toggle("fa-times");
-      navMenu.classList.toggle("fa-bars");
+      navMenu.classList.toggle("x");
     };
   }
   destroy(): void {
