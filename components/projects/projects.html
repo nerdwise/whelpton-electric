@@ -4,7 +4,9 @@
   </h1>
   <div class="gallery">
     {% for image in component.images %}
-    <img src="{{ image.url }}" alt="{{ image.alt }}" class="gallery__image" />
+    <div class="gallery__frame">
+      <img src="{{ image.url }}" alt="{{ image.alt }}" class="gallery__image" />
+    </div>
     {% endfor %}
   </div>
 </section>
