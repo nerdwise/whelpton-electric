@@ -131,12 +131,15 @@
   width: 100%
   background: $mobile-nav-background-color
   z-index: 2
+  opacity: 0
   transform: translateY(-100%)
-  transition: transform .5s
+  transition-property: transform, opacity
+  transition-duration: 0.5s
   display: none
 
 .display-nav
   transform: translateY(0)
+  opacity: 1
 
 .nav__content--mobile
   width: 100%
