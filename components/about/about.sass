@@ -6,26 +6,29 @@
   justify-content: space-evenly
   opacity: 0
   animation: fadein 1s forwards 0.5s
+  +brand-color-gradient(to bottom)
 
 .about__header
   +section-header
   margin-top: calc(10vh + 2rem)
+  color: $about-font-color
 
 .about__text
-  width: 50%
+  width: 30%
   color: $about-font-color
   margin-bottom: 2rem
+  text-align: center
+  +font-weight-light
 
-.about__paragraph
-  margin: 1rem
+.about__point
+  margin: 1.5rem
   line-height: 1.5rem
   font-size: $about-text-font-size
-  text-align: center
 
 +media($tablet-landscape)
   .about__text
     width: 60%
-  .about__paragraph
+  .about__point
     line-height: 1.8rem
     margin: 1.5rem
 
@@ -33,7 +36,7 @@
 +media($tablet-portrait)
   .about__text
     width: 80%
-  .about__paragraph
+  .about__point
     font-size: $about-text-font-size--tablet-portrait
     line-height: 1.6rem
 
@@ -42,6 +45,6 @@
     font-size: $section-header-font-size--mobile
   .about__text
     width: 95%
-  .about__paragraph
+  .about__point
     font-size: $about-text-font-size--mobile
     line-height: 1.2rem
