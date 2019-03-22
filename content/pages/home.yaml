@@ -48,19 +48,19 @@ components:
     modals:
       - class: modal modal--1
         contentclass: modal__content modal__content--1
-        image: https://via.placeholder.com/350x150
+        image: /static/images/projects/projects11-min.jpg
         target: modal--1
         title: !g.string home.service1_title.text
         description: !g.string home.service1_description.text
       - class: modal modal--2
         contentclass: modal__content modal__content--2
-        image: https://via.placeholder.com/350x150
+        image: /static/images/projects/projects10-min.jpg
         target: modal--2
         title: !g.string home.service2_title.text
         description: !g.string home.service1_description.text
       - class: modal modal--3
         contentclass: modal__content modal__content--3
-        image: https://via.placeholder.com/350x150
+        image: /static/images/projects/projects1-min.jpeg
         target: modal--3
         title: !g.string home.service3_title.text
         description: !g.string home.service1_description.text
