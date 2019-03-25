@@ -3,7 +3,7 @@
 @import ../../global/sass-config/mixins
 
 .services
-  height: 65vh
+  min-height: 65vh
   width: 100%
   +brand-color-gradient(to bottom)
   +font-weight-light
@@ -15,6 +15,7 @@
 
 .services__header
   +section-header
+  margin: 2rem
 
 .boxes
   width: 80%
@@ -87,6 +88,7 @@
 .content
   display: none
   max-width: 90vw
+  flex-grow: 2
 
 .display
   display: flex
@@ -111,29 +113,34 @@
 
 +media($tablet-portrait)
   .services
-    min-height: 100vh
-  .services__header
-    margin-top: 0
+    padding: 2rem 0
   .boxes
-    height: 80%
+    height: auto
     flex-direction: column
     width: 100%
   .shrink
     flex-direction: row
     height: 10%
   .box
+    height: auto
     width: 50%
     margin: 1rem 0
 
 +media($mobile)
-  .services
-    min-height: 175vh
   .services__header
     font-size: $section-header-font-size--mobile
-    margin-bottom: -1rem
   .boxes
     height: 90%
   .shrink
     height: 10%
+    width: 90%
+    .box
+      width: 4rem
+    .box__title
+      font-size: $services-box-shrunk-header-font-size--mobile
   .box
     width: 65%
+  .content__title
+    font-size: $services-content-header-font-size--mobile
+  .content__info
+    font-size: $services-content-info-font-size--mobile
