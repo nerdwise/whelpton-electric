@@ -4,24 +4,18 @@
   </h1>
   <div class="boxes">
     {% for box in component.boxes %}
-    <div class="{{ box.class }}" data-target="{{ box.target }}">
-      <img src="{{ box.icon }}" alt="" />
+    <div class="{{ box.class }}">
+      <img src="{{ box.icon }}" class="box__image" alt="" />
       <h4 class="box__title">
         {{ box.title }}
       </h4>
     </div>
     {% endfor %}
   </div>
-  {% for modal in component.modals %}
-  <div class="{{ modal.class }}">
-    <div class="{{ modal.contentclass }}">
-      <span data-target="{{ modal.target }}" class="modal__x">&times;</span>
-      <img class="modal__image" src="{{ modal.image }}" alt="" />
-      <h4 class="modal__title">
-        {{ modal.title }}
-      </h4>
-      <p class="modal__description">{{ modal.description }}</p>
-    </div>
+  {% for content in component.content %}
+  <div class="{{ content.class }}">
+    <h3 class="content__title">{{ content.title }}</h3>
+    <p class="content__info">{{ content.description }}</p>
   </div>
   {% endfor %}
 </section>
