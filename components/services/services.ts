@@ -7,30 +7,10 @@ class Services {
   private x_: NodeListOf<Element> = document.querySelectorAll(".modal__x");
   private boxes_: NodeListOf<Element> = document.querySelectorAll(".box");
   private scrollEffect_: ScrollEffect = null;
-  constructor() {}
-  openModal(): void {
-    this.boxes_.forEach((box: HTMLElement) => {
-      box.onclick = () => {
-        const target = box.dataset.target;
-        const modal: HTMLElement = document.querySelector(`.${target}`);
-        modal.classList.toggle("open");
-      };
-    });
-  }
-  closeModal(): void {
-    window.onclick = event => {
-      this.modals_.forEach((modal: HTMLElement) => {
-        if (event.target == modal) {
-          modal.classList.remove("open");
-        }
-      });
-    };
-    this.x_.forEach((x: HTMLElement) => {
-      x.onclick = event => {
-        const target = x.dataset.target;
-        const modal: HTMLElement = document.querySelector(`.${target}`);
-        modal.classList.remove("open");
-      };
+  constructor() {
+    const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
+    boxes.forEach(box => {
+      box.addEventListener("click", () => this.onClick(box));
     });
   }
   startScrollEffect(): void {
@@ -50,6 +30,29 @@ class Services {
         }
       }
     );
+  }
+  onClick(box: Element): void {
+    const boxes: HTMLElement = document.querySelector(".boxes");
+    boxes.classList.add("shrink");
+
+    const one: HTMLElement = document.querySelector(".content--1");
+    const two: HTMLElement = document.querySelector(".content--2");
+    const three: HTMLElement = document.querySelector(".content--3");
+
+    one.classList.remove("display");
+    two.classList.remove("display");
+    three.classList.remove("display");
+
+    const index = box.className.length - 1;
+    if (box.className[index] === "1") {
+      one.classList.add("display");
+    }
+    if (box.className[index] === "2") {
+      two.classList.add("display");
+    }
+    if (box.className[index] === "3") {
+      three.classList.add("display");
+    }
   }
 }
 

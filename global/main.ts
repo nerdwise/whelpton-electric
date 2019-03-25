@@ -7,8 +7,6 @@ nav.startScrollWatcher();
 nav.expandNav();
 
 const services = new Services();
-services.openModal();
-services.closeModal();
 
 if (document.querySelector(".hero")) {
   services.startScrollEffect();
