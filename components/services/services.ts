@@ -13,7 +13,9 @@ class Services {
   constructor() {
     const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
     boxes.forEach(box => {
-      box.addEventListener("click", () => this.onClick(box));
+      box.addEventListener("click", () => {
+        this.onClick(box);
+      });
     });
   }
   startScrollEffect(): void {
@@ -74,24 +76,19 @@ class Services {
     const one: HTMLElement = document.querySelector(".box--1");
     const two: HTMLElement = document.querySelector(".box--2");
     const three: HTMLElement = document.querySelector(".box--3");
-    const slide: HTMLElement = document.querySelector('.content--1');
-    this.carouselNav_ = new CarouselNav(
-      this.carousel_, 
-      boxes,
-      {
-        createNavItemFn: (slide, this.carousel_) => {
-          if(this.carousel_.getSlideIndex(slide) === 0) {
-            return one;
-          }
-          if(this.carousel_.getSlideIndex(slide) === 1) {
-            return two;
-          }
-          if(this.carousel_.getSlideIndex(slide) === 2) {
-            return three;
-          }
+    this.carouselNav_ = new CarouselNav(this.carousel_, boxes, {
+      createNavItemFn: (slide, carousel) => {
+        if (carousel.getSlideIndex(slide) === 0) {
+          return one;
+        }
+        if (carousel.getSlideIndex(slide) === 1) {
+          return two;
+        }
+        if (carousel.getSlideIndex(slide) === 2) {
+          return three;
         }
       }
-    );
+    });
   }
 }
 
