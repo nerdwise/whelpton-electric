@@ -13,15 +13,13 @@ class Services {
 
   constructor() {
     const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
-    boxes.forEach(box => {
-      box.addEventListener("click", () => {
-        this.shrink();
-      });
-      box.addEventListener("click", oneTimeInit);
-      function oneTimeInit() {
+    boxes.forEach((box) => {
+      const oneTimeInit = () => {
         this.init();
+        this.shrink();
         box.removeEventListener("click", oneTimeInit);
-      }
+      };
+      box.addEventListener("click", oneTimeInit);
     });
   }
 
