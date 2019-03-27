@@ -1,3 +1,5 @@
+@import ../background/background-config
+  
 .projects
   min-height: 85vh
   display: flex
@@ -5,7 +7,7 @@
   align-items: center
   justify-content: space-evenly
   opacity: 0
-  animation: fadein 1s forwards 3s
+  animation: fadein 0.2s forwards #{$background-image-fadein-time / 2}
 
 .projects__header
   +section-header
