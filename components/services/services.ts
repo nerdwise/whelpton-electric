@@ -10,6 +10,7 @@ class Services {
   private carouselTimer_: CarouselTimer = null;
   private carouselNav_: CarouselNav = null;
   private scrollEffect_: ScrollEffect = null;
+
   constructor() {
     const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
     boxes.forEach(box => {
@@ -23,6 +24,7 @@ class Services {
       }
     });
   }
+
   startScrollEffect(): void {
     this.scrollEffect_ = new ScrollEffect(
       <HTMLElement>document.querySelector(".boxes"),
@@ -41,10 +43,12 @@ class Services {
       }
     );
   }
+
   shrink(): void {
     const boxes: HTMLElement = document.querySelector(".boxes");
     boxes.classList.add("shrink");
   }
+
   startCarousel(): void {
     this.carousel_ = new Carousel(
       document.querySelector(".services"),
@@ -54,9 +58,11 @@ class Services {
       }
     );
   }
+
   startCarouselTimer(): void {
     this.carouselTimer_ = new CarouselTimer(this.carousel_);
   }
+
   startCarouselNav(): void {
     const boxes: HTMLElement = document.querySelector(".boxes");
     const one: HTMLElement = document.querySelector(".box--1");
@@ -77,6 +83,7 @@ class Services {
       }
     });
   }
+
   init(): void {
     console.log("init");
     this.startCarousel();
