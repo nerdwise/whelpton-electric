@@ -15,7 +15,11 @@
   {% for content in component.content %}
   <div class="{{ content.class }}">
     <h3 class="content__title">{{ content.title }}</h3>
-    <p class="content__info">{{ content.description }}</p>
+    <img
+      src="{{ content.image }}"
+      alt="{{ content.title }}"
+      class="content__image"
+    />
   </div>
   {% endfor %}
 </section>
