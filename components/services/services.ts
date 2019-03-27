@@ -1,18 +1,28 @@
 import { ScrollEffect } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base";
 import { Tween } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween";
 import { DistanceFunction } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function";
+import { Carousel } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/carousel";
+import { CarouselNav } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/nav";
+import { CarouselTimer } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/timer";
 
 class Services {
-  private modals_: NodeListOf<Element> = document.querySelectorAll(".modal");
-  private x_: NodeListOf<Element> = document.querySelectorAll(".modal__x");
-  private boxes_: NodeListOf<Element> = document.querySelectorAll(".box");
+  private carousel_: Carousel = null;
+  private carouselTimer_: CarouselTimer = null;
+  private carouselNav_: CarouselNav = null;
   private scrollEffect_: ScrollEffect = null;
+
   constructor() {
     const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
-    boxes.forEach(box => {
-      box.addEventListener("click", () => this.onClick(box));
+    boxes.forEach((box) => {
+      const oneTimeInit = () => {
+        this.init();
+        this.shrink();
+        box.removeEventListener("click", oneTimeInit);
+      };
+      box.addEventListener("click", oneTimeInit);
     });
   }
+
   startScrollEffect(): void {
     this.scrollEffect_ = new ScrollEffect(
       <HTMLElement>document.querySelector(".boxes"),
@@ -31,28 +41,52 @@ class Services {
       }
     );
   }
-  onClick(box: Element): void {
+
+  shrink(): void {
     const boxes: HTMLElement = document.querySelector(".boxes");
     boxes.classList.add("shrink");
+  }
 
-    const one: HTMLElement = document.querySelector(".content--1");
-    const two: HTMLElement = document.querySelector(".content--2");
-    const three: HTMLElement = document.querySelector(".content--3");
+  startCarousel(): void {
+    this.carousel_ = new Carousel(
+      document.querySelector(".services"),
+      Array.from(document.querySelectorAll(".content")),
+      {
+        activeCssClass: "display"
+      }
+    );
+  }
 
-    one.classList.remove("display");
-    two.classList.remove("display");
-    three.classList.remove("display");
+  startCarouselTimer(): void {
+    this.carouselTimer_ = new CarouselTimer(this.carousel_);
+  }
 
-    const index = box.className.length - 1;
-    if (box.className[index] === "1") {
-      one.classList.add("display");
-    }
-    if (box.className[index] === "2") {
-      two.classList.add("display");
-    }
-    if (box.className[index] === "3") {
-      three.classList.add("display");
-    }
+  startCarouselNav(): void {
+    const boxes: HTMLElement = document.querySelector(".boxes");
+    const one: HTMLElement = document.querySelector(".box--1");
+    const two: HTMLElement = document.querySelector(".box--2");
+    const three: HTMLElement = document.querySelector(".box--3");
+
+    const indexToNavItem = new Map([[0, one], [1, two], [2, three]]);
+
+    this.carouselNav_ = new CarouselNav(this.carousel_, boxes, {
+      createNavItemFn: (slide, carousel) => {
+        const index = carousel.getSlideIndex(slide);
+        CarouselNav.addTransitionToSlideListener(
+          indexToNavItem.get(index),
+          slide,
+          carousel
+        );
+        return indexToNavItem.get(index);
+      }
+    });
+  }
+
+  init(): void {
+    console.log("init");
+    this.startCarousel();
+    this.startCarouselTimer();
+    this.startCarouselNav();
   }
 }
 
