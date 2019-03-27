@@ -14,8 +14,13 @@ class Services {
     const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
     boxes.forEach(box => {
       box.addEventListener("click", () => {
-        this.onClick(box);
+        this.shrink();
       });
+      box.addEventListener("click", oneTimeInit);
+      function oneTimeInit() {
+        this.init();
+        box.removeEventListener("click", oneTimeInit);
+      }
     });
   }
   startScrollEffect(): void {
@@ -36,28 +41,9 @@ class Services {
       }
     );
   }
-  onClick(box: Element): void {
+  shrink(): void {
     const boxes: HTMLElement = document.querySelector(".boxes");
     boxes.classList.add("shrink");
-
-    const one: HTMLElement = document.querySelector(".content--1");
-    const two: HTMLElement = document.querySelector(".content--2");
-    const three: HTMLElement = document.querySelector(".content--3");
-
-    one.classList.remove("display");
-    two.classList.remove("display");
-    three.classList.remove("display");
-
-    const index = box.className.length - 1;
-    if (box.className[index] === "1") {
-      one.classList.add("display");
-    }
-    if (box.className[index] === "2") {
-      two.classList.add("display");
-    }
-    if (box.className[index] === "3") {
-      three.classList.add("display");
-    }
   }
   startCarousel(): void {
     this.carousel_ = new Carousel(
@@ -76,19 +62,26 @@ class Services {
     const one: HTMLElement = document.querySelector(".box--1");
     const two: HTMLElement = document.querySelector(".box--2");
     const three: HTMLElement = document.querySelector(".box--3");
+
+    const indexToNavItem = new Map([[0, one], [1, two], [2, three]]);
+
     this.carouselNav_ = new CarouselNav(this.carousel_, boxes, {
       createNavItemFn: (slide, carousel) => {
-        if (carousel.getSlideIndex(slide) === 0) {
-          return one;
-        }
-        if (carousel.getSlideIndex(slide) === 1) {
-          return two;
-        }
-        if (carousel.getSlideIndex(slide) === 2) {
-          return three;
-        }
+        const index = carousel.getSlideIndex(slide);
+        CarouselNav.addTransitionToSlideListener(
+          indexToNavItem.get(index),
+          slide,
+          carousel
+        );
+        return indexToNavItem.get(index);
       }
     });
+  }
+  init(): void {
+    console.log("init");
+    this.startCarousel();
+    this.startCarouselTimer();
+    this.startCarouselNav();
   }
 }
 

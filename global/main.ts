@@ -7,9 +7,6 @@ nav.startScrollWatcher();
 nav.expandNav();
 
 const services = new Services();
-services.startCarousel();
-services.startCarouselTimer();
-services.startCarouselNav();
 
 if (document.querySelector(".hero")) {
   services.startScrollEffect();
