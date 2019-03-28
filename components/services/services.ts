@@ -13,9 +13,9 @@ class Services {
 
   constructor() {
     const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
-    boxes.forEach((box) => {
+    boxes.forEach(box => {
       const oneTimeInit = () => {
-        this.init();
+        this.init(box);
         this.shrink();
         box.removeEventListener("click", oneTimeInit);
       };
@@ -47,7 +47,7 @@ class Services {
     boxes.classList.add("shrink");
   }
 
-  startCarousel(): void {
+  startCarousel(box: Element): void {
     this.carousel_ = new Carousel(
       document.querySelector(".services"),
       Array.from(document.querySelectorAll(".content")),
@@ -55,6 +55,9 @@ class Services {
         activeCssClass: "display"
       }
     );
+    const classNum: string = box.className[box.className.length - 1];
+    const index: number = parseInt(classNum) - 1;
+    this.carousel_.transitionToIndex(index);
   }
 
   startCarouselTimer(): void {
@@ -82,9 +85,9 @@ class Services {
     });
   }
 
-  init(): void {
+  init(box: Element): void {
     console.log("init");
-    this.startCarousel();
+    this.startCarousel(box);
     this.startCarouselTimer();
     this.startCarouselNav();
   }
