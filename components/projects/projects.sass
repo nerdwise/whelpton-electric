@@ -57,7 +57,7 @@
   opacity: 0
 
 .modal__image
-  height: 70%
+  max-height: 70%
   max-width: 90%
   border-radius: 5px
   display: none
@@ -74,12 +74,8 @@
   display: flex
   animation: fadein .2s forwards
 
-+media($tablet-landscape)
-  .gallery__image
-    width: 45%
-
 +media($mobile)
   .projects__header
     font-size: $section-header-font-size--mobile
-  .gallery__image
-    width: 95%
+  .modal__image
+    height: auto
