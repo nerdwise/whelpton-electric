@@ -39,6 +39,40 @@
 .gallery__image:hover
   transform: scale(1.1)
   filter: saturate(1)
+  cursor: pointer
+
+// Modal
+.modal
+  +brand-color-gradient(to bottom)
+  display: none
+  position: fixed
+  z-index: 1
+  left: 0
+  top: 0
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+  overflow: auto
+  opacity: 0
+
+.modal__image
+  height: 70%
+  max-width: 90%
+  border-radius: 5px
+  display: none
+  opacity: 0
+
+.modal__x
+  position: absolute
+  top: calc(10vh + 1rem)
+  right: 1rem
+  font-size: 2rem
+  cursor: pointer
+
+.display
+  display: flex
+  animation: fadein .2s forwards
 
 +media($tablet-landscape)
   .gallery__image

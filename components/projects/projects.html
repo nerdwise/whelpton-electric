@@ -5,8 +5,23 @@
   <div class="gallery">
     {% for image in component.images %}
     <div class="gallery__frame">
-      <img src="{{ image.url }}" alt="{{ image.alt }}" class="gallery__image" />
+      <img
+        src="{{ image.url }}"
+        alt="{{ image.alt }}"
+        class="gallery__image"
+        data-target="{{ image.dataTarget }}"
+      />
     </div>
+    {% endfor %}
+  </div>
+  <div class="modal">
+    <span class="modal__x">&times;</span>
+    {% for image in component.images %}
+    <img
+      src="{{ image.url }}"
+      alt="{{ image.alt }}"
+      class="{{ image.class }}"
+    />
     {% endfor %}
   </div>
 </section>
