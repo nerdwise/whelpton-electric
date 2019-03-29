@@ -8,22 +8,6 @@ description: Whelpton Electric - Based in Agassiz
 ng_controller: BaseController
 
 components:
-  - component: nav
-    id: nav
-    logo:
-      url: /static/images/we-logo.svg
-      alt: !g.string home.company_name.text
-      header: Whelpton
-      subheader: Electric
-    email: !g.yaml /content/data/contact.yaml?email
-    phone: !g.yaml /content/data/contact.yaml?phone
-    links:
-      - name: Services
-        url: '#services'
-      - name: Projects
-        url: /projects
-      - name: About
-        url: /about
   - component: background
   - component: hero
     id: hero
@@ -66,11 +50,3 @@ components:
         target: content--4
         title: !g.string home.service4_title.text
         description: !g.string home.service4_description.text
-  - component: footer
-    title: Footer
-    brand: !g.string home.company_name.text
-    logo:
-      url: /static/images/we-logo.svg
-      alt: !g.string home.company_name.text
-    email: !g.yaml /content/data/contact.yaml?email
-    phone: !g.yaml /content/data/contact.yaml?phone

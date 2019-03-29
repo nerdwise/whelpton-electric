@@ -5,22 +5,6 @@ description: View our work
 ng_controller: ProjectsController
 
 components:
-- component: nav
-  id: nav
-  logo:
-    url: /static/images/we-logo.svg
-    alt: !g.string home.company_name.text
-    header: Whelpton
-    subheader: Electric
-  email: !g.yaml /content/data/contact.yaml?email
-  phone: !g.yaml /content/data/contact.yaml?phone
-  links:
-    - name: Services
-      url: /#services
-    - name: Projects
-      url: /projects
-    - name: About
-      url: /about
 - component: background
 - component: projects
   title: Projects
@@ -82,11 +66,3 @@ components:
     alt: Image
     class: modal__image modal__image--14
     dataTarget: modal__image--14
-- component: footer
-  title: Footer
-  brand: !g.string home.company_name.text
-  logo:
-    url: /static/images/we-logo.svg
-    alt: !g.string home.company_name.text
-  email: !g.yaml /content/data/contact.yaml?email
-  phone: !g.yaml /content/data/contact.yaml?phone
