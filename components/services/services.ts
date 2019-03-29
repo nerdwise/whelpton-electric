@@ -69,8 +69,9 @@ class Services {
     const one: HTMLElement = document.querySelector(".box--1");
     const two: HTMLElement = document.querySelector(".box--2");
     const three: HTMLElement = document.querySelector(".box--3");
+    const four: HTMLElement = document.querySelector(".box--4");
 
-    const indexToNavItem = new Map([[0, one], [1, two], [2, three]]);
+    const indexToNavItem = new Map([[0, one], [1, two], [2, three], [3, four]]);
 
     this.carouselNav_ = new CarouselNav(this.carousel_, boxes, {
       createNavItemFn: (slide, carousel) => {
@@ -86,7 +87,6 @@ class Services {
   }
 
   init(box: Element): void {
-    console.log("init");
     this.startCarousel(box);
     this.startCarouselTimer();
     this.startCarouselNav();
