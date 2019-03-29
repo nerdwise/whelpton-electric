@@ -1,15 +1,20 @@
 company_name:
   text@: Whelpton Electric
 service1_description:
-  text@: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  text@: Installation and construction of new panels.  Custom modifications and troubleshooting of existing controls.  Installation and troubleshooting of VFD and PLC systems.  Service for water treatment plants and pump control systems.
 service1_title:
   text@: Industrial
 service2_description:
-  text@: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  text@: Tenant improvements and service.
 service2_title:
   text@: Commercial
-service3_description: {}
+service3_description:
+  text@: New construction, renovations and service.
 service3_title:
   text@: Residential
+service4_description:
+  text@: New construction and service.
+service4_title:
+  text@: Agriculture
 title:
   text@: Home

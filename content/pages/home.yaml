@@ -42,6 +42,9 @@ components:
       - title: !g.string home.service3_title.text
         icon: /static/images/house.svg
         class: box box--3
+      - title: !g.string home.service4_title.text
+        icon: /static/images/tractor.svg
+        class: box box--4
     content:
       - class: content content--1
         image: /static/images/projects/projects11-min.jpg
@@ -52,12 +55,17 @@ components:
         image: /static/images/projects/projects10-min.jpg
         target: content--2
         title: !g.string home.service2_title.text
-        description: !g.string home.service1_description.text
+        description: !g.string home.service2_description.text
       - class: content content--3
         image: /static/images/projects/projects1-min.jpeg
         target: content--3
         title: !g.string home.service3_title.text
-        description: !g.string home.service1_description.text
+        description: !g.string home.service3_description.text
+      - class: content content--4
+        image: /static/images/projects/projects12-min.jpg
+        target: content--4
+        title: !g.string home.service4_title.text
+        description: !g.string home.service4_description.text
   - component: footer
     title: Footer
     brand: !g.string home.company_name.text

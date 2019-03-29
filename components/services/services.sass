@@ -29,7 +29,7 @@
   justify-content: center
   flex-direction: row
   align-items: flex-start
-  width: 15rem
+  width: 20rem
   height: 3rem
   margin: 1rem auto
 
@@ -47,6 +47,10 @@
     border-right: 1px solid $service-box-border-color
 
   .box--3
+    border-radius: 0
+    border-right: 1px solid $service-box-border-color
+
+  .box--4
     border-radius: 0 5px 5px 0
 
   .box:hover
@@ -91,7 +95,7 @@
 // Content
 .content
   display: none
-  max-width: 90vw
+  width: 90vw
   flex-grow: 2
 
 .display
@@ -103,7 +107,12 @@
 
 .content__title
   font-size: $services-content-header-font-size
-  margin-bottom: 2rem
+  margin-bottom: 1rem
+
+.content__description
+  margin-bottom: 1rem
+  max-width: 50%
+  text-align: center
 
 .content__image
   max-height: 30rem
@@ -115,7 +124,9 @@
   .boxes
     width: 100%
   .box
-    width: 28%
+    width: 20%
+  .content__description
+    max-width: 65%
 
 +media($tablet-portrait)
   .services
@@ -131,6 +142,8 @@
     height: auto
     width: 50%
     margin: 1rem 0
+  .content__description
+    max-width: 75%
 
 +media($mobile)
   .services__header
@@ -141,7 +154,7 @@
     height: 10%
     width: 90%
     .box
-      width: 4rem
+      width: 2.8rem
     .box__title
       font-size: $services-box-shrunk-header-font-size--mobile
   .box
@@ -150,3 +163,5 @@
     font-size: $services-content-header-font-size--mobile
   .content__info
     font-size: $services-content-info-font-size--mobile
+  .content__description
+    max-width: 95%

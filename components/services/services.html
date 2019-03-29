@@ -15,6 +15,7 @@
   {% for content in component.content %}
   <div class="{{ content.class }}">
     <h3 class="content__title">{{ content.title }}</h3>
+    <p class="content__description">{{ content.description }}</p>
     <img
       src="{{ content.image }}"
       alt="{{ content.title }}"
