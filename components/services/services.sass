@@ -32,12 +32,11 @@
   flex-direction: row
   flex-wrap: nowrap
   align-items: flex-start
-  width: 20rem
   height: 3rem
   margin: 1rem auto
 
   .box
-    width: 5rem
+    width: 8rem
     height: 3rem
     box-shadow: none
     
@@ -60,10 +59,10 @@
     transform: translateY(-10%)
 
   .box__title
-    font-size: $services-box-shrunk-header-font-size
+    display: none
 
   .box__image
-    display: none
+    height: 80%
 
 .box
   +border-radius
@@ -95,6 +94,12 @@
 .active
   background: linear-gradient(to bottom, $services-button-gradient-start-color, $services-button-gradient-end-color)
   color: white
+
+  .box__title
+    display: block
+
+  .box__image
+    display: none
 
 // Content
 .content
