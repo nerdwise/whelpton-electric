@@ -22,6 +22,7 @@
   max-width: $max-width
   height: 50%
   display: flex
+  flex-wrap: wrap
   align-items: center
   justify-content: space-evenly
   transition: 0.5s
@@ -29,6 +30,7 @@
 .shrink
   justify-content: center
   flex-direction: row
+  flex-wrap: nowrap
   align-items: flex-start
   width: 20rem
   height: 3rem
@@ -78,6 +80,7 @@
   color: $service-box-text-color
   padding: 0 1rem
   cursor: pointer
+  margin-bottom: 1rem
   transition: 0.3s
 
 .box:hover
@@ -125,7 +128,7 @@
   .boxes
     width: 100%
   .box
-    width: 20%
+    width: 40%
   .content__description
     max-width: 65%
 
