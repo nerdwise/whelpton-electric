@@ -139,13 +139,14 @@
 // Mobile nav
 .nav--mobile
   position: fixed
-  top: 10vh
+  top: 5vh
   left: 0
   width: 100%
+  height: 95%
   background: $mobile-nav-background-color
   z-index: 2
   opacity: 0
-  transform: translateY(-100%)
+  transform: translateX(100%)
   transition-property: transform, opacity
   transition-duration: 0.5s
   display: none
@@ -156,6 +157,7 @@
 
 .nav__content--mobile
   width: 100%
+  height: 100%
   display: flex
   flex-direction: column
   align-items: center
@@ -165,6 +167,7 @@
 .nav__link--mobile
   color: $nav-text-color
   text-decoration: none
+  font-size: $nav-link-font-size--tablet-landscape
 
 .nav__item--mobile
   margin: 1rem 0
@@ -178,7 +181,7 @@
   text-decoration: none
   padding: 0.5rem 1.5rem
   +border-radius
-  font-size: $nav-button-font-size--mobile
+  font-size: $nav-button-font-size--tablet-landscape
   +font-weight-regular
   margin: .5rem 0
 
@@ -198,6 +201,12 @@
   .nav__menu
     display: inline-block
 
++media($tablet-portrait)
+  .nav__link--mobile
+    font-size: $nav-link-font-size--tablet-portrait
+  .nav__button--mobile
+    font-size: $nav-button-font-size--tablet-portrait
+
 +media($mobile)
   .nav__brand
     width: 30%
@@ -207,3 +216,7 @@
   .nav--minimal
     .nav__logo
       height: 50%
+  .nav__link--mobile
+    font-size: $nav-link-font-size--mobile
+  .nav__button--mobile
+    font-size: $nav-button-font-size--mobile
