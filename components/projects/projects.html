@@ -16,9 +16,8 @@
   </div>
   <div class="modal">
     <span class="modal__x">&times;</span>
-    {% for image in component.images %}
+    {% for image in component.modalImages %}
     <img
-      src="{{ image.url }}"
       alt="{{ image.alt }}"
       class="{{ image.class }}"
     />

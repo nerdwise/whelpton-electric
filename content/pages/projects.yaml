@@ -9,8 +9,51 @@ components:
 - component: projects
   title: Projects
   id: projects
-  images:
-  - url: /static/images/projects/projects1-min.jpeg
+  images: 
+  - url: /static/images/projects/projects1-sq.jpg
+    alt: Image
+    dataTarget: 1
+  - url: /static/images/projects/projects2-sq.jpg
+    alt: Image    
+    dataTarget: 2
+  - url: /static/images/projects/projects3-sq.jpg
+    alt: Image    
+    dataTarget: 3
+  - url: /static/images/projects/projects4-sq.jpg
+    alt: Image    
+    dataTarget: 4
+  - url: /static/images/projects/projects5-sq.jpg
+    alt: Image    
+    dataTarget: 5
+  - url: /static/images/projects/projects6-sq.jpg
+    alt: Image    
+    dataTarget: 6
+  - url: /static/images/projects/projects7-sq.jpg
+    alt: Image    
+    dataTarget: 7
+  - url: /static/images/projects/projects8-sq.jpg
+    alt: Image    
+    dataTarget: 8
+  - url: /static/images/projects/projects9-sq.jpg
+    alt: Image    
+    dataTarget: 9
+  - url: /static/images/projects/projects10-sq.jpg
+    alt: Image
+    dataTarget: 10
+  - url: /static/images/projects/projects11-sq.jpg
+    alt: Image
+    dataTarget: 11
+  - url: /static/images/projects/projects12-sq.jpg
+    alt: Image
+    dataTarget: 12
+  - url: /static/images/projects/projects13-sq.jpg
+    alt: Image
+    dataTarget: 13
+  - url: /static/images/projects/projects14-sq.jpg
+    alt: Image
+    dataTarget: 14
+  modalImages:
+  - url: /static/images/projects/projects1-min.jpg
     alt: Image
     class: modal__image modal__image--1
     dataTarget: modal__image--1
