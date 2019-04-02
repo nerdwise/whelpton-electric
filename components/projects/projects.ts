@@ -10,7 +10,8 @@ class Projects {
     this.images.forEach(image => {
       image.onclick = () => {
         this.modal.classList.add("display");
-        const modalImage = document.querySelector("." + image.dataset.target);
+        const modalImage: HTMLImageElement = document.querySelector(".modal__image--" + image.dataset.target);
+        modalImage.src = `/static/images/projects/projects${image.dataset.target}-min.jpg`;
         modalImage.classList.add("display");
         this.closeModal(modalImage);
       };
