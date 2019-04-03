@@ -20,11 +20,11 @@
 
   .nav__logo
     height: 100%
+    transform: translateY(55%)
 
   .logo__text
     transform: scale(0)
     opacity: 0
-    display: none
 
 .nav__brand
   height: 80%
@@ -36,7 +36,7 @@
 
 .nav__logo
   height: 50%
-  transition: height .3s
+  transition: height 0.3s, transform 0.3s
 
 .logo__text
   display: flex
@@ -193,7 +193,8 @@
   .nav--minimal
     height: 10vh
     .nav__logo
-      height: 60%
+      height: 50%
+      transform: none
   .nav--mobile
     display: block
   .logo__text
