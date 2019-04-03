@@ -60,10 +60,6 @@ class Services {
     this.carousel_.transitionToIndex(index);
   }
 
-  startCarouselTimer(): void {
-    this.carouselTimer_ = new CarouselTimer(this.carousel_);
-  }
-
   startCarouselNav(): void {
     const boxes: HTMLElement = document.querySelector(".boxes");
     const one: HTMLElement = document.querySelector(".box--1");
@@ -88,7 +84,6 @@ class Services {
 
   init(box: Element): void {
     this.startCarousel(box);
-    this.startCarouselTimer();
     this.startCarouselNav();
   }
 }
