@@ -132,26 +132,28 @@
   margin-bottom: 3rem
 
 +media($tablet-landscape)
+  .services__header
+    margin-top: 2rem
   .boxes
     width: 100%
+    margin-bottom: 2rem
   .box
-    width: 40%
+    width: 33%
   .content__description
     max-width: 65%
 
 +media($tablet-portrait)
-  .services
-    padding: 2rem 0
+  .services__header
+    margin-top: 3rem
   .boxes
     height: auto
-    flex-direction: column
     width: 100%
   .shrink
     flex-direction: row
     height: 10%
   .box
     height: auto
-    width: 50%
+    width: 33%
     margin: 1rem 0
   .content__description
     max-width: 75%
@@ -169,7 +171,7 @@
     .box__title
       font-size: $services-box-shrunk-header-font-size--mobile
   .box
-    width: 65%
+    width: 55%
   .content__title
     font-size: $services-content-header-font-size--mobile
   .content__info
