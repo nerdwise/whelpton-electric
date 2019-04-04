@@ -157,6 +157,14 @@
   transform: translateY(0)
   opacity: 1
 
+.nav__header-link--mobile
+  text-decoration: none
+  margin-left: auto
+  margin-right: 2rem
+
+.nav__header-button--mobile
+  display: none
+
 .nav__content--mobile
   width: 100%
   min-height: 55vh
@@ -200,6 +208,8 @@
       transform: none
   .nav--mobile
     display: block
+  .nav__header-button--mobile
+    display: block
   .logo__text
     display: none
   .nav__menu
@@ -226,3 +236,5 @@
     font-size: $nav-link-font-size--mobile
   .nav__button--mobile
     font-size: $nav-button-font-size--mobile
+  .nav__header-link--mobile
+    margin-right: 1rem
