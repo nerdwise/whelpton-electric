@@ -6,6 +6,11 @@
     {% for box in component.boxes %}
     <div class="{{ box.class }}">
       <img src="{{ box.icon }}" class="box__image" alt="" />
+      <img
+        src="{{ box.whiteicon }}"
+        class="box__image box__image--white"
+        alt=""
+      />
       <h4 class="box__title">
         {{ box.title }}
       </h4>

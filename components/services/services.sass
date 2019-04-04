@@ -32,13 +32,14 @@
   flex-direction: row
   flex-wrap: nowrap
   align-items: flex-start
-  height: 3rem
+  height: 5rem
   margin-bottom: 2rem
 
   .box
     width: 10rem
-    height: 3rem
+    height: auto
     box-shadow: none
+    padding: 0.5rem
     
   .box--1
     border-radius: 5px 0 0 5px
@@ -59,10 +60,11 @@
     transform: translateY(-10%)
 
   .box__title
-    display: none
+    margin: 0
+    text-transform: none
 
   .box__image
-    height: 80%
+    height: 3rem
 
 .box
   +border-radius
@@ -92,15 +94,18 @@
   margin: 2rem
   text-transform: uppercase
 
+.box__image--white
+  display: none
+
 .active
   background: linear-gradient(to bottom, $services-button-gradient-start-color, $services-button-gradient-end-color)
   color: white
 
-  .box__title
-    display: block
-
   .box__image
     display: none
+
+  .box__image--white
+    display: block
 
 // Content
 .content
