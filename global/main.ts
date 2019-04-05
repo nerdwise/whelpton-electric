@@ -8,10 +8,12 @@ nav.startScrollWatcher();
 nav.expandNav();
 
 const services = new Services();
+services.inviewTriggerEffect(document.querySelector(".services__header"));
+services.inviewTriggerEffect(document.querySelector(".boxes"));
+
 const projects = new Projects();
 projects.init();
 
 if (document.querySelector(".hero")) {
-  services.startScrollEffect();
   new Hero(1.1).startScrollEffect();
 }
