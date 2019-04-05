@@ -4,12 +4,13 @@ import { DistanceFunction } from "../../node_modules/toolbox-v2/src/toolbox/comp
 import { Carousel } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/carousel";
 import { CarouselNav } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/nav";
 import { CarouselTimer } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/timer";
+import { Scroll } from "../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll";
 
 class Services {
   private carousel_: Carousel = null;
   private carouselTimer_: CarouselTimer = null;
   private carouselNav_: CarouselNav = null;
-  private scrollEffect_: ScrollEffect = null;
+  private inviewScrollEffect_: ScrollEffect = null;
 
   constructor() {
     const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
@@ -21,25 +22,6 @@ class Services {
       };
       box.addEventListener("click", oneTimeInit);
     });
-  }
-
-  startScrollEffect(): void {
-    this.scrollEffect_ = new ScrollEffect(
-      <HTMLElement>document.querySelector(".boxes"),
-      {
-        effects: [
-          new Tween([
-            [0, "transform: translateY(25%)"],
-            [1, "transform: translateY(0)"]
-          ])
-        ],
-        getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
-        startDistance: 0,
-        endDistance: function endDistance() {
-          return window.innerHeight / 2;
-        }
-      }
-    );
   }
 
   shrink(): void {
@@ -78,6 +60,22 @@ class Services {
           carousel
         );
         return indexToNavItem.get(index);
+      }
+    });
+  }
+
+  inviewTriggerEffect(target: HTMLElement): void {
+    this.inviewScrollEffect_ = new ScrollEffect(target, {
+      effects: [
+        new Tween([
+          [0, "opacity: 0; transform: translateY(50%)"],
+          [1, "opacity: 1; transform: translateY(0)"]
+        ])
+      ],
+      getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
+      startDistance: 0,
+      endDistance: function endDistance() {
+        return window.innerHeight / 2;
       }
     });
   }
