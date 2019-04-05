@@ -1,3 +1,5 @@
+import { loadImage } from "../../node_modules/toolbox-v2/src/toolbox/utils/loading/load-image";
+
 class Projects {
   images: HTMLElement[];
   modal: HTMLElement;
@@ -10,10 +12,17 @@ class Projects {
     this.images.forEach(image => {
       image.onclick = () => {
         this.modal.classList.add("display");
-        const modalImage: HTMLImageElement = document.querySelector(".modal__image--" + image.dataset.target);
-        modalImage.src = `/static/images/projects/projects${image.dataset.target}-min.jpg`;
-        modalImage.classList.add("display");
-        this.closeModal(modalImage);
+        const modalImage: HTMLImageElement = document.querySelector(
+          ".modal__image--" + image.dataset.target
+        );
+        const modalImageSrc: string = `/static/images/projects/projects${
+          image.dataset.target
+        }-min.jpg`;
+        loadImage(modalImageSrc).then(() => {
+          modalImage.src = modalImageSrc;
+          modalImage.classList.add("display-image");
+          this.closeModal(modalImage);
+        });
       };
     });
   }
@@ -22,7 +31,7 @@ class Projects {
     window.onclick = event => {
       if (event.target == this.modal) {
         this.modal.classList.remove("display");
-        image.classList.remove("display");
+        image.classList.remove("display-image");
       }
     };
     const x: HTMLElement = document.querySelector(".modal__x");
