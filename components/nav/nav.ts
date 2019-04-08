@@ -1,8 +1,12 @@
 import { ActiveOnCondition } from "../../node_modules/toolbox-v2/src/toolbox/components/active-on-condition/base";
 import { Scroll } from "../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll";
+import { RemoveTransformOnScrollDown } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/remove-transform-on-scroll-down";
+import { ScrollEffect } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base";
 
 class Nav {
   private scrollWatcher_: ActiveOnCondition = null;
+  private removeTransformOnScrollDown_: RemoveTransformOnScrollDown = null;
+  private scrollEffect_: ScrollEffect = null;
   constructor() {}
   startScrollWatcher(): void {
     this.scrollWatcher_ = new ActiveOnCondition(
@@ -21,6 +25,17 @@ class Nav {
       mobileNav.classList.toggle("display-nav");
       navMenu.classList.toggle("x");
     };
+  }
+  scrollResponsiveNav(): void {
+    this.scrollEffect_ = new ScrollEffect(
+      <HTMLElement>document.querySelector(".nav"),
+      {
+        effects: [new RemoveTransformOnScrollDown()],
+        condition: () => {
+          return window.innerWidth < 1200;
+        }
+      }
+    );
   }
   destroy(): void {
     this.scrollWatcher_.destroy();

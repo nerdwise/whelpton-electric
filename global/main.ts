@@ -6,6 +6,7 @@ import { Projects } from "../components/projects/projects";
 const nav = new Nav();
 nav.startScrollWatcher();
 nav.expandNav();
+nav.scrollResponsiveNav();
 
 const services = new Services();
 const projects = new Projects();
