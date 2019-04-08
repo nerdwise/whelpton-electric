@@ -35,7 +35,7 @@ components:
         class: box box--4
     content:
       - class: content content--1
-        image: /static/images/projects/projects11-min.jpg
+        image: /static/images/projects/projects13-min.jpg
         target: content--1
         title: !g.string home.service1_title.text
         description: !g.string home.service1_description.text
