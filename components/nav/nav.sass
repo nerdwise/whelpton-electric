@@ -1,4 +1,7 @@
-@import ../../global/sass-config/_mixins
+@import ../../global/sass-config/breakpoints
+@import ../../global/sass-config/colors
+@import ../../global/sass-config/font-sizes
+@import ../../global/sass-config/mixins
 
 .nav
   height: 10vh
@@ -33,6 +36,9 @@
   flex-direction: column
   justify-content: center
   text-decoration: none
+
+  +media($mobile)
+    width: 30%
 
 .nav__logo
   height: 50%
@@ -129,10 +135,10 @@
   transition-duration: .3s
 
 .x
-  .nav__bar--1 
+  .nav__bar--1
     transform: rotate(-135deg) translate(-.35rem, -.64rem)
 
-  .nav__bar--2 
+  .nav__bar--2
     opacity: 0
 
   .nav__bar--3
@@ -225,8 +231,6 @@
     font-size: $nav-button-font-size--tablet-portrait
 
 +media($mobile)
-  .nav__brand
-    width: 30%
   .nav__logo
     height: 50%
     transition: height .3s
