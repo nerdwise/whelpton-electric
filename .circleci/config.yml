@@ -34,15 +34,24 @@ jobs:
     - checkout
     - run: *node_version
     - restore_cache: *cache_restore
-    - run:
-        name: Install Dependencies
-        command: make develop
     - run: *grow_install
     - save_cache: *cache_save
     - run: *grow_build
     - run:
-        name: Stage S3
-        command: make stage-s3
+        name: Stage Firebase
+        command: make stage-firebase
+  deploy:
+    <<: *base_deploy
+    steps:
+    - checkout
+    - run: *node_version
+    - restore_cache: *cache_restore
+    - run: *grow_install
+    - save_cache: *cache_save
+    - run: *grow_build
+    - run:
+        name: Deploy Firebase
+        command: make deploy-firebase
 
 workflows:
   version: 2
@@ -53,9 +62,9 @@ workflows:
           branches:
             only:
             - master # Update to staging once live
-#    - deploy:
-#        filters:
-#          branches:
-#            only:
-#            - master
+    - deploy:
+        filters:
+          branches:
+            only:
+            - master
 
