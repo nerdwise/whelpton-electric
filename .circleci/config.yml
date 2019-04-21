@@ -61,7 +61,7 @@ workflows:
         filters:
           branches:
             only:
-            - master # Update to staging once live
+            - staging # Update to staging once live
     - deploy:
         filters:
           branches:
