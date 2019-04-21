@@ -1,12 +1,8 @@
 project ?= whelpton-electric
 version ?= auto
 
-stage-firebase:
+build-staging:
 	PATH=$(PATH):$(HOME)/bin grow deploy -f staging
-	firebase use staging
-	firebase deploy
 
-deploy-firebase:
+build-prod:
 	PATH=$(PATH):$(HOME)/bin grow deploy -f prod
-	firebase use prod
-	firebase deploy
