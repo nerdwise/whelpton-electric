@@ -9,8 +9,8 @@ email: !g.yaml /content/data/contact.yaml?email
 phone: !g.yaml /content/data/contact.yaml?phone
 links:
   - name: Services
-    url: '/index.html#services'
+    url: '#services'
   - name: Projects
-    url: /projects/index.html
+    url: /projects/
   - name: About us
-    url: /about/index.html
+    url: /about/
