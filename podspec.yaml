@@ -60,5 +60,12 @@ deployments:
     out_dir: ./build/
     env:
       name: staging
-      host: whelpton-electric.s3-us-west-2.amazonaws.com
+      host: whelpton-electric.firebaseapp.com/
+      scheme: https
+  prod:
+    destination: local
+    out_dir: ./build/
+    env:
+      name: prod
+      host: whelptonelectric.com
       scheme: https

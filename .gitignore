@@ -1,5 +1,6 @@
 .DS_Store
 .depcache.json
+.firebase
 dist
 build
 node_modules

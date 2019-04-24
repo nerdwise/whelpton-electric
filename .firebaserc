@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "whelpton-electric"
+    "staging": "whelpton-electric",
+    "prod": "whelpton-prod"
   }
 }

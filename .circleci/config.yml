@@ -23,9 +23,9 @@ base_deploy: &base_deploy
   docker:
   - image: grow/base:latest
 
-grow_build: &grow_build
-  name: Grow Build
-  command: grow build
+firebase_deploy: &firebase_deploy
+  name: Deploy to Firebase
+  command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 
 jobs:
   stage:
@@ -34,15 +34,31 @@ jobs:
     - checkout
     - run: *node_version
     - restore_cache: *cache_restore
-    - run:
-        name: Install Dependencies
-        command: make develop
     - run: *grow_install
     - save_cache: *cache_save
-    - run: *grow_build
     - run:
-        name: Stage S3
-        command: make stage-s3
+        name: Stage Firebase
+        command: make build-staging
+    - run:
+        name: Use Staging Firebase config
+        command: ./node_modules/.bin/firebase use staging --token=$FIREBASE_DEPLOY_TOKEN
+    - run: *firebase_deploy
+
+  deploy:
+    <<: *base_deploy
+    steps:
+    - checkout
+    - run: *node_version
+    - restore_cache: *cache_restore
+    - run: *grow_install
+    - save_cache: *cache_save
+    - run:
+        name: Deploy Firebase
+        command: make build-prod
+    - run:
+        name: Use Production Firebase config
+        command: ./node_modules/.bin/firebase use prod --token=$FIREBASE_DEPLOY_TOKEN
+    - run: *firebase_deploy
 
 workflows:
   version: 2
@@ -52,10 +68,10 @@ workflows:
         filters:
           branches:
             only:
-            - master # Update to staging once live
-#    - deploy:
-#        filters:
-#          branches:
-#            only:
-#            - master
+            - staging
+    - deploy:
+        filters:
+          branches:
+            only:
+            - master
 

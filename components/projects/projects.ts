@@ -37,7 +37,7 @@ class Projects {
     const x: HTMLElement = document.querySelector(".modal__x");
     x.onclick = event => {
       this.modal.classList.remove("display");
-      image.classList.remove("display");
+      image.classList.remove("display-image");
     };
   }
 
