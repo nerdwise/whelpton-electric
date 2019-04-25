@@ -8,7 +8,9 @@ class Nav {
   private scrollWatcher_: ActiveOnCondition = null;
   private removeTransformOnScrollDown_: RemoveTransformOnScrollDown = null;
   private scrollEffect_: ScrollEffect = null;
+
   constructor() {}
+
   startScrollWatcher(): void {
     this.scrollWatcher_ = new ActiveOnCondition(
       'nav',
@@ -18,15 +20,17 @@ class Nav {
       'minimal'
     );
   }
+
   expandNav(): void {
     const navMenu: HTMLElement = document.querySelector('.nav__menu');
     const mobileNav: HTMLElement = document.querySelector('.nav--mobile');
 
-    navMenu.onclick = () => {
+    navMenu.addEventListener('click', () => {
       mobileNav.classList.toggle('display-nav');
       navMenu.classList.toggle('x');
-    };
+    });
   }
+
   scrollResponsiveNav(): void {
     this.scrollEffect_ = new ScrollEffect(
       <HTMLElement>document.querySelector('.nav'),
@@ -39,6 +43,7 @@ class Nav {
       }
     );
   }
+
   destroy(): void {
     this.scrollWatcher_.destroy();
     this.scrollWatcher_ = null;
