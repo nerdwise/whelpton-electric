@@ -8,8 +8,24 @@ class Nav {
   private scrollWatcher_: ActiveOnCondition = null;
   private removeTransformOnScrollDown_: RemoveTransformOnScrollDown = null;
   private scrollEffect_: ScrollEffect = null;
+  private mobileNavLinks_: HTMLElement[];
+  private navMenu_: HTMLElement;
+  private mobileNav_: HTMLElement;
 
-  constructor() {}
+  constructor() {
+    this.mobileNavLinks_ = Array.from(
+      document.querySelectorAll('.nav__item--mobile')
+    );
+    this.navMenu_ = document.querySelector('.nav__menu');
+    this.mobileNav_ = document.querySelector('.nav--mobile');
+  }
+
+  init(): void {
+    this.startScrollWatcher();
+    this.expandNav();
+    this.scrollResponsiveNav();
+    this.closeNavOnLinkClick();
+  }
 
   startScrollWatcher(): void {
     this.scrollWatcher_ = new ActiveOnCondition(
@@ -28,6 +44,15 @@ class Nav {
     navMenu.addEventListener('click', () => {
       mobileNav.classList.toggle('display-nav');
       navMenu.classList.toggle('x');
+    });
+  }
+
+  closeNavOnLinkClick(): void {
+    this.mobileNavLinks_.forEach(link => {
+      link.addEventListener('click', () => {
+        this.mobileNav_.classList.toggle('display-nav');
+        this.navMenu_.classList.toggle('x');
+      });
     });
   }
 
