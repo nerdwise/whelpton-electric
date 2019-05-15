@@ -1,20 +1,18 @@
-import { Nav } from "../components/nav/nav";
-import { Hero } from "../components/hero/hero";
-import { Services } from "../components/services/services";
-import { Projects } from "../components/projects/projects";
+import { Nav } from '../components/nav/nav';
+import { Hero } from '../components/hero/hero';
+import { Services } from '../components/services/services';
+import { Projects } from '../components/projects/projects';
 
 const nav = new Nav();
-nav.startScrollWatcher();
-nav.expandNav();
-nav.scrollResponsiveNav();
+nav.init();
 
 const services = new Services();
-services.inviewTriggerEffect(document.querySelector(".services__header"));
-services.inviewTriggerEffect(document.querySelector(".boxes"));
+services.inviewTriggerEffect(document.querySelector('.services__header'));
+services.inviewTriggerEffect(document.querySelector('.boxes'));
 
 const projects = new Projects();
 projects.init();
 
-if (document.querySelector(".hero")) {
+if (document.querySelector('.hero')) {
   new Hero(1.1).startScrollEffect();
 }
