@@ -2,16 +2,21 @@ import { Nav } from '../components/nav/nav';
 import { Hero } from '../components/hero/hero';
 import { Services } from '../components/services/services';
 import { Projects } from '../components/projects/projects';
+import { onDomContentLoad } from '../node_modules/toolbox-v2/src/toolbox/utils/dom/on-dom-content-load';
 
 const projects = new Projects();
-projects.init();
-
 const nav = new Nav();
-nav.init();
-
 const services = new Services();
-services.init();
 
-if (document.querySelector('.hero')) {
-  new Hero(1.1).startScrollEffect();
-}
+// No need to use the returned promise
+const _unused = onDomContentLoad(() => {
+  nav.init();
+
+  services.init();
+
+  projects.init();
+
+  if (document.querySelector('.hero')) {
+    new Hero(1.1).startScrollEffect();
+  }
+});
