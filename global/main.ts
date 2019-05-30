@@ -10,11 +10,9 @@ const services = new Services();
 
 // No need to use the returned promise
 const _unused = onDomContentLoad(() => {
-  nav.init();
-
-  services.init();
-
   projects.init();
+  nav.init();
+  services.init();
 
   if (document.querySelector('.hero')) {
     new Hero(1.1).startScrollEffect();
