@@ -1,10 +1,10 @@
-import { ScrollEffect } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base";
-import { Tween } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween";
-import { DistanceFunction } from "../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function";
-import { Carousel } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/carousel";
-import { CarouselNav } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/nav";
-import { CarouselTimer } from "../../node_modules/toolbox-v2/src/toolbox/components/carousel/timer";
-import { Scroll } from "../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll";
+import { ScrollEffect } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/base';
+import { Tween } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/effects/tween/tween';
+import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/components/scroll-effect/distance-function';
+import { Carousel } from '../../node_modules/toolbox-v2/src/toolbox/components/carousel/carousel';
+import { CarouselNav } from '../../node_modules/toolbox-v2/src/toolbox/components/carousel/nav';
+import { CarouselTimer } from '../../node_modules/toolbox-v2/src/toolbox/components/carousel/timer';
+import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll';
 
 class Services {
   private carousel_: Carousel = null;
@@ -13,28 +13,28 @@ class Services {
   private inviewScrollEffect_: ScrollEffect = null;
 
   constructor() {
-    const boxes: NodeListOf<Element> = document.querySelectorAll(".box");
+    const boxes: NodeListOf<Element> = document.querySelectorAll('.box');
     boxes.forEach(box => {
       const oneTimeInit = () => {
-        this.init(box);
+        this.initOnce(box);
         this.shrink();
-        box.removeEventListener("click", oneTimeInit);
+        box.removeEventListener('click', oneTimeInit);
       };
-      box.addEventListener("click", oneTimeInit);
+      box.addEventListener('click', oneTimeInit);
     });
   }
 
   shrink(): void {
-    const boxes: HTMLElement = document.querySelector(".boxes");
-    boxes.classList.add("shrink");
+    const boxes: HTMLElement = document.querySelector('.boxes');
+    boxes.classList.add('shrink');
   }
 
   startCarousel(box: Element): void {
     this.carousel_ = new Carousel(
-      document.querySelector(".services"),
-      Array.from(document.querySelectorAll(".content")),
+      document.querySelector('.services'),
+      Array.from(document.querySelectorAll('.content')),
       {
-        activeCssClass: "display"
+        activeCssClass: 'display'
       }
     );
     const classNum: string = box.className[box.className.length - 1];
@@ -43,11 +43,11 @@ class Services {
   }
 
   startCarouselNav(): void {
-    const boxes: HTMLElement = document.querySelector(".boxes");
-    const one: HTMLElement = document.querySelector(".box--1");
-    const two: HTMLElement = document.querySelector(".box--2");
-    const three: HTMLElement = document.querySelector(".box--3");
-    const four: HTMLElement = document.querySelector(".box--4");
+    const boxes: HTMLElement = document.querySelector('.boxes');
+    const one: HTMLElement = document.querySelector('.box--1');
+    const two: HTMLElement = document.querySelector('.box--2');
+    const three: HTMLElement = document.querySelector('.box--3');
+    const four: HTMLElement = document.querySelector('.box--4');
 
     const indexToNavItem = new Map([[0, one], [1, two], [2, three], [3, four]]);
 
@@ -68,8 +68,8 @@ class Services {
     this.inviewScrollEffect_ = new ScrollEffect(target, {
       effects: [
         new Tween([
-          [0, "opacity: 0; transform: translateY(50%)"],
-          [1, "opacity: 1; transform: translateY(0)"]
+          [0, 'opacity: 0; transform: translateY(50%)'],
+          [1, 'opacity: 1; transform: translateY(0)']
         ])
       ],
       getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
@@ -80,9 +80,14 @@ class Services {
     });
   }
 
-  init(box: Element): void {
+  initOnce(box: Element): void {
     this.startCarousel(box);
     this.startCarouselNav();
+  }
+
+  init(): void {
+    this.inviewTriggerEffect(document.querySelector('.services__header'));
+    this.inviewTriggerEffect(document.querySelector('.boxes'));
   }
 }
 
