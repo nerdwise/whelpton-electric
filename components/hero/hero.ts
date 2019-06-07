@@ -4,14 +4,18 @@ import { DistanceFunction } from "../../node_modules/toolbox-v2/src/toolbox/comp
 
 class Hero {
   private scrollEffect_: ScrollEffect = null;
-  private scale_: number;
+  private readonly scale_: number;
+  private readonly hero_: HTMLElement;
+
   constructor(scale: number) {
     this.scale_ = scale;
+    this.hero_ = document.querySelector(".hero");
   }
+
   startScrollEffect(): void {
     const translateY = ((this.scale_ - 1) / 2) * -100;
     this.scrollEffect_ = new ScrollEffect(
-      <HTMLElement>document.querySelector(".hero"),
+      this.hero_,
       {
         effects: [
           new Tween([
