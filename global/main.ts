@@ -15,6 +15,6 @@ const _unused = onDomContentLoad(() => {
   services.init();
 
   if (document.querySelector('.hero')) {
-    new Hero(1.1).startScrollEffect();
+    new Hero(1.1).init();
   }
 });

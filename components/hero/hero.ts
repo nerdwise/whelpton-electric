@@ -12,7 +12,11 @@ class Hero {
     this.hero_ = document.querySelector(".hero");
   }
 
-  startScrollEffect(): void {
+  public init(): void {
+    this.startScrollEffect_();
+  }
+
+  private startScrollEffect_(): void {
     const translateY = ((this.scale_ - 1) / 2) * -100;
     this.scrollEffect_ = new ScrollEffect(
       this.hero_,
