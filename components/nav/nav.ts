@@ -6,11 +6,12 @@ import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/comp
 
 class Nav {
   private scrollWatcher_: ActiveOnCondition = null;
-  private removeTransformOnScrollDown_: RemoveTransformOnScrollDown = null;
+  private readonly removeTransformOnScrollDown_: RemoveTransformOnScrollDown = null;
   private scrollEffect_: ScrollEffect = null;
-  private mobileNavLinks_: HTMLElement[];
-  private navMenu_: HTMLElement;
-  private mobileNav_: HTMLElement;
+  private readonly mobileNavLinks_: HTMLElement[];
+  private readonly navMenu_: HTMLElement;
+  private readonly mobileNav_: HTMLElement;
+  private readonly nav_: HTMLElement;
 
   constructor() {
     this.mobileNavLinks_ = Array.from(
@@ -18,6 +19,7 @@ class Nav {
     );
     this.navMenu_ = document.querySelector('.nav__menu');
     this.mobileNav_ = document.querySelector('.nav--mobile');
+    this.nav_ = document.querySelector('.nav');
   }
 
   init(): void {
@@ -58,7 +60,7 @@ class Nav {
 
   scrollResponsiveNav(): void {
     this.scrollEffect_ = new ScrollEffect(
-      <HTMLElement>document.querySelector('.nav'),
+      this.nav_,
       {
         getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
         effects: [new RemoveTransformOnScrollDown()],
