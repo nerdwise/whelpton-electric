@@ -6,11 +6,12 @@ import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/comp
 
 class Nav {
   private scrollWatcher_: ActiveOnCondition = null;
-  private removeTransformOnScrollDown_: RemoveTransformOnScrollDown = null;
+  private readonly removeTransformOnScrollDown_: RemoveTransformOnScrollDown = null;
   private scrollEffect_: ScrollEffect = null;
-  private mobileNavLinks_: HTMLElement[];
-  private navMenu_: HTMLElement;
-  private mobileNav_: HTMLElement;
+  private readonly mobileNavLinks_: HTMLElement[];
+  private readonly navMenu_: HTMLElement;
+  private readonly mobileNav_: HTMLElement;
+  private readonly nav_: HTMLElement;
 
   constructor() {
     this.mobileNavLinks_ = Array.from(
@@ -18,16 +19,17 @@ class Nav {
     );
     this.navMenu_ = document.querySelector('.nav__menu');
     this.mobileNav_ = document.querySelector('.nav--mobile');
+    this.nav_ = document.querySelector('.nav');
   }
 
-  init(): void {
-    this.startScrollWatcher();
-    this.expandNav();
-    this.scrollResponsiveNav();
-    this.closeNavOnLinkClick();
+  public init(): void {
+    this.startScrollWatcher_();
+    this.expandNav_();
+    this.scrollResponsiveNav_();
+    this.closeNavOnLinkClick_();
   }
 
-  startScrollWatcher(): void {
+  private startScrollWatcher_(): void {
     this.scrollWatcher_ = new ActiveOnCondition(
       'nav',
       () => {
@@ -37,17 +39,14 @@ class Nav {
     );
   }
 
-  expandNav(): void {
-    const navMenu: HTMLElement = document.querySelector('.nav__menu');
-    const mobileNav: HTMLElement = document.querySelector('.nav--mobile');
-
-    navMenu.addEventListener('click', () => {
-      mobileNav.classList.toggle('display-nav');
-      navMenu.classList.toggle('x');
+  private expandNav_(): void {
+    this.navMenu_.addEventListener('click', () => {
+      this.mobileNav_.classList.toggle('display-nav');
+      this.navMenu_.classList.toggle('x');
     });
   }
 
-  closeNavOnLinkClick(): void {
+  private closeNavOnLinkClick_(): void {
     this.mobileNavLinks_.forEach(link => {
       link.addEventListener('click', () => {
         this.mobileNav_.classList.toggle('display-nav');
@@ -56,9 +55,9 @@ class Nav {
     });
   }
 
-  scrollResponsiveNav(): void {
+  private scrollResponsiveNav_(): void {
     this.scrollEffect_ = new ScrollEffect(
-      <HTMLElement>document.querySelector('.nav'),
+      this.nav_,
       {
         getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
         effects: [new RemoveTransformOnScrollDown()],
@@ -69,7 +68,7 @@ class Nav {
     );
   }
 
-  destroy(): void {
+  public destroy(): void {
     this.scrollWatcher_.destroy();
     this.scrollWatcher_ = null;
   }

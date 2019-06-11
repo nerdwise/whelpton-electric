@@ -4,35 +4,51 @@ import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/comp
 import { Carousel } from '../../node_modules/toolbox-v2/src/toolbox/components/carousel/carousel';
 import { CarouselNav } from '../../node_modules/toolbox-v2/src/toolbox/components/carousel/nav';
 import { CarouselTimer } from '../../node_modules/toolbox-v2/src/toolbox/components/carousel/timer';
-import { Scroll } from '../../node_modules/toolbox-v2/src/toolbox/utils/cached-vectors/scroll';
 
 class Services {
   private carousel_: Carousel = null;
-  private carouselTimer_: CarouselTimer = null;
+  private readonly carouselTimer_: CarouselTimer = null;
   private carouselNav_: CarouselNav = null;
   private inviewScrollEffect_: ScrollEffect = null;
+  private boxes_: NodeListOf<Element>;
+  private boxContainer_: HTMLElement;
+  private services_: HTMLElement;
+  private content_: HTMLElement[];
 
   constructor() {
-    const boxes: NodeListOf<Element> = document.querySelectorAll('.box');
-    boxes.forEach(box => {
+    this.boxes_ = document.querySelectorAll('.box');
+    this.boxContainer_ = document.querySelector('.boxes');
+    this.services_ = document.querySelector('.services');
+    this.content_ = Array.from(document.querySelectorAll('.content'));
+
+    this.boxes_.forEach(box => {
       const oneTimeInit = () => {
-        this.initOnce(box);
-        this.shrink();
+        this.initOnce_(box);
+        this.shrink_();
         box.removeEventListener('click', oneTimeInit);
       };
       box.addEventListener('click', oneTimeInit);
     });
   }
 
-  shrink(): void {
-    const boxes: HTMLElement = document.querySelector('.boxes');
-    boxes.classList.add('shrink');
+  public init(): void {
+    this.inviewTriggerEffect_(document.querySelector('.services__header'));
+    this.inviewTriggerEffect_(document.querySelector('.boxes'));
   }
 
-  startCarousel(box: Element): void {
+  private initOnce_(box: Element): void {
+    this.startCarousel_(box);
+    this.startCarouselNav_();
+  }
+
+  private shrink_(): void {
+    this.boxContainer_.classList.add('shrink');
+  }
+
+  private startCarousel_(box: Element): void {
     this.carousel_ = new Carousel(
-      document.querySelector('.services'),
-      Array.from(document.querySelectorAll('.content')),
+      this.services_,
+      this.content_,
       {
         activeCssClass: 'display'
       }
@@ -42,16 +58,15 @@ class Services {
     this.carousel_.transitionToIndex(index);
   }
 
-  startCarouselNav(): void {
-    const boxes: HTMLElement = document.querySelector('.boxes');
-    const one: HTMLElement = document.querySelector('.box--1');
-    const two: HTMLElement = document.querySelector('.box--2');
-    const three: HTMLElement = document.querySelector('.box--3');
-    const four: HTMLElement = document.querySelector('.box--4');
+  private startCarouselNav_(): void {
+    const boxes: HTMLElement[] = 
+      Array.from(this.boxContainer_.querySelectorAll('.box'));
+    const indexToNavItem = new Map();
+    boxes.forEach((box, boxIndex) => {
+      indexToNavItem.set(boxIndex, box);
+    });
 
-    const indexToNavItem = new Map([[0, one], [1, two], [2, three], [3, four]]);
-
-    this.carouselNav_ = new CarouselNav(this.carousel_, boxes, {
+    this.carouselNav_ = new CarouselNav(this.carousel_, this.boxContainer_, {
       createNavItemFn: (slide, carousel) => {
         const index = carousel.getSlideIndex(slide);
         CarouselNav.addTransitionToSlideListener(
@@ -64,7 +79,7 @@ class Services {
     });
   }
 
-  inviewTriggerEffect(target: HTMLElement): void {
+  private inviewTriggerEffect_(target: HTMLElement): void {
     this.inviewScrollEffect_ = new ScrollEffect(target, {
       effects: [
         new Tween([
@@ -74,20 +89,10 @@ class Services {
       ],
       getDistanceFunction: DistanceFunction.DOCUMENT_SCROLL,
       startDistance: 0,
-      endDistance: function endDistance() {
+      endDistance: () => {
         return window.innerHeight / 2;
       }
     });
-  }
-
-  initOnce(box: Element): void {
-    this.startCarousel(box);
-    this.startCarouselNav();
-  }
-
-  init(): void {
-    this.inviewTriggerEffect(document.querySelector('.services__header'));
-    this.inviewTriggerEffect(document.querySelector('.boxes'));
   }
 }
 
