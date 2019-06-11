@@ -1,48 +1,54 @@
 import { loadImage } from '../../node_modules/toolbox-v2/src/toolbox/utils/loading/load-image';
 
 class Projects {
-  images: HTMLElement[];
-  modal: HTMLElement;
+  private images_: HTMLElement[];
+  private modal_: HTMLElement;
+  private x_: HTMLElement;
+
   constructor() {
-    this.images = Array.from(document.querySelectorAll('.gallery__image'));
-    this.modal = document.querySelector('.modal');
+    this.images_ = Array.from(document.querySelectorAll('.gallery__image'));
+    this.modal_ = document.querySelector('.modal');
+    this.x_ = document.querySelector('.modal__x');
   }
 
-  openModal(): void {
-    this.images.forEach(image => {
+  public init(): void {
+    this.openModalOnClick_();
+  }
+
+  private loadImage_(image: HTMLElement): void {
+    this.modal_.classList.add('display');
+    const modalImage: HTMLImageElement = document.querySelector(
+      '.modal__image--' + image.dataset.target
+    );
+    const modalImageSrc: string = `/static/images/projects/projects${
+      image.dataset.target
+    }-min.jpg`;
+    loadImage(modalImageSrc).then(() => {
+      modalImage.src = modalImageSrc;
+      modalImage.classList.add('display-image');
+      this.closeModalOnClick_(modalImage);
+    });
+  }
+
+  private openModalOnClick_(): void {
+    this.images_.forEach(image => {
       image.addEventListener('click', () => {
-        this.modal.classList.add('display');
-        const modalImage: HTMLImageElement = document.querySelector(
-          '.modal__image--' + image.dataset.target
-        );
-        const modalImageSrc: string = `/static/images/projects/projects${
-          image.dataset.target
-        }-min.jpg`;
-        loadImage(modalImageSrc).then(() => {
-          modalImage.src = modalImageSrc;
-          modalImage.classList.add('display-image');
-          this.closeModal(modalImage);
-        });
+        this.loadImage_(image);
       });
     });
   }
 
-  closeModal(image: Element): void {
+  private closeModalOnClick_(image: Element): void {
     window.addEventListener('click', event => {
-      if (event.target == this.modal) {
-        this.modal.classList.remove('display');
+      if (event.target == this.modal_) {
+        this.modal_.classList.remove('display');
         image.classList.remove('display-image');
       }
     });
-    const x: HTMLElement = document.querySelector('.modal__x');
-    x.addEventListener('click', event => {
-      this.modal.classList.remove('display');
+    this.x_.addEventListener('click', event => {
+      this.modal_.classList.remove('display');
       image.classList.remove('display-image');
     });
-  }
-
-  init(): void {
-    this.openModal();
   }
 }
 
