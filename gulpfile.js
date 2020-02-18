@@ -19,7 +19,7 @@ const config = {
     }
   },
   SASS_SOURCE_FILE: "./global/main.sass",
-  SASS_SOURCES: ["./global/*.{sass,scss}", "./components/**/*.{sass,scss}"],
+  SASS_SOURCES: ["./global/**/*.{sass,scss}", "./components/**/*.{sass,scss}"],
   SASS_OUT_DIR: "./dist/css/"
 };
 

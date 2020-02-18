@@ -1,6 +1,6 @@
 grow_version: ">=0.2.5"
 
-title: "Whelpton Electric"
+title: "WhelpTech Electrical Services"
 
 home: /content/pages/home.yaml
 
@@ -67,5 +67,5 @@ deployments:
     out_dir: ./build/
     env:
       name: prod
-      host: whelptonelectric.com
+      host: whelptech.ca
       scheme: https

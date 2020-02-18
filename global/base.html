@@ -45,15 +45,19 @@
       href="{{ g.static(podspec.meta.favicon_path).url.path }}"
     />
     {% endif %}
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700&display=swap" rel="stylesheet">
     <link
       href="{{ g.static('/dist/css/main.min.css').url.path }}"
       rel="stylesheet"
     />
     <base href="/" />
+    <style type="text/css">
+      @import url("https://fast.fonts.net/lt/1.css?apiType=css&c=43c167d0-fc7a-41f6-9ca6-28fff94c7dd8&fontids=5574941");
+      @font-face{
+        font-family:"FuturaBT W05 Bold";
+        src:url({{g.static("/static/fonts/5574941/480df9d4-0a52-44dc-a6ea-32b77ac0dfa5.woff2").url.path}}) format("woff2"),url({{g.static("/static/fonts/5574941/2fcfc1da-a7af-42d2-87f4-6613b3e5c900.woff").url.path}}) format("woff");
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">

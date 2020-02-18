@@ -3,9 +3,10 @@ $path: /{root}/
 $localization:
   path: /{locale}/{root}/
 $order: -1
-description: Whelpton Electric provides Industrial, Commercial, Agricultural 
-  and Residential electrical services in the Fraser Valley.  Our experienced 
-  Electricians serve Agassiz, Chilliwack, Hope, Harrison Hot Springs, Harrison 
+description: >-
+  WhelpTech Electrical Services provides Industrial, Commercial, Agricultural
+  and Residential electrical services in the Fraser Valley.  Our experienced
+  Electricians serve Agassiz, Chilliwack, Hope, Harrison Hot Springs, Harrison
   Mills and Abbotsford.
 
 ng_controller: BaseController
@@ -14,8 +15,6 @@ components:
   - component: background
   - component: hero
     id: hero
-    header: Whelpton
-    subheader: Electric
   - component: services
     id: services
     title: Services

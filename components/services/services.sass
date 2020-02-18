@@ -3,10 +3,9 @@
 @import ../../global/sass-config/mixins
 
 .services
-  min-height: 65vh
   width: 100%
   box-shadow: 0 -2px 8px rgba(0,0,0,.1)
-  +services-gradient(to bottom)
+  +services-gradient()
   color: $services-text-color
   display: flex
   flex-direction: column
@@ -16,7 +15,7 @@
 .services__header
   +section-header
   margin-bottom: 2rem
-  margin-top: 3rem
+  margin-top: 2.5rem
 
 .boxes
   width: 80%
@@ -26,6 +25,7 @@
   flex-wrap: wrap
   align-items: center
   justify-content: space-evenly
+  margin-bottom: 1rem
 
 .shrink
   justify-content: center
@@ -42,8 +42,8 @@
     padding: 0.5rem
 
   .box:not(.active)
-    +grey-color-gradient(to bottom)
-    
+    +grey-color-gradient()
+
   .box--1
     border-radius: 5px 0 0 5px
 
@@ -71,7 +71,7 @@
 
 .box
   +border-radius
-  +grey-color-gradient(to right)
+  +grey-color-gradient()
   +box-shadow
   +slide(-2px)
   width: 20%

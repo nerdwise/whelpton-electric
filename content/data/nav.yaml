@@ -1,10 +1,8 @@
 component: nav
 id: nav
 logo:
-  url: /static/images/we-logo.svg
+  url: /static/images/logos/logo-only.svg
   alt: !g.string home.company_name.text
-  header: Whelpton
-  subheader: Electric
 email: !g.yaml /content/data/contact.yaml?email
 phone: !g.yaml /content/data/contact.yaml?phone
 links:

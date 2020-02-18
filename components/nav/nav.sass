@@ -7,7 +7,7 @@
   height: 10vh
   width: 100%
   position: fixed
-  +nav-bar-gradient(to bottom)
+  +nav-bar-gradient()
   color: $nav-text-color
   display: flex
   flex-direction: row
@@ -20,10 +20,6 @@
 
 .nav--minimal
   height: 5vh
-
-  .nav__logo
-    height: 100%
-    transform: translateY(50%)
 
   .logo__text
     transform: scale(0)
@@ -101,10 +97,10 @@
   align-items: center
   height: 100%
   justify-content: space-evenly
-  width: 33%
+  width: auto
 
 .nav__button
-  +nav-button-gradient(to bottom)
+  +nav-button-gradient()
   color: $nav-button-text-color
   text-decoration: none
   padding: 0.5rem 1.5rem
@@ -114,6 +110,7 @@
   transition-property: transform, box-shadow
   transition-duration: .3s
   cursor: pointer
+  margin-right: 16px
 
 .nav__button:hover
   transform: translateY(-2px)
@@ -192,7 +189,7 @@
   background: white
 
 .nav__button--mobile
-  +nav-button-gradient(to bottom)
+  +nav-button-gradient()
   color: $nav-button-text-color
   text-decoration: none
   padding: 0.5rem 1.5rem
@@ -235,10 +232,6 @@
 +media($mobile)
   .nav__logo
     height: 50%
-    transition: height .3s
-  .nav--minimal
-    .nav__logo
-      height: 50%
   .nav__content--mobile
     overflow: scroll
   .nav__link--mobile

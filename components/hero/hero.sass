@@ -3,6 +3,7 @@
 
 .hero
   position: relative
+  padding-top: 10vh
   height: 85vh
   width: 100%
   display: flex
@@ -13,42 +14,55 @@
   animation: fadein 0.5s forwards #{$background-image-fadein-time / 2}
 
 .hero__logo
-  background-image: url('/static/images/we-logo.svg')
-  background-size: cover
+  $width: 80vw
+  $max-width: 80vh
+  $ratio: 262 / 498.5
+  background-image: url('/static/images/logos/vertical-stack.svg')
+  background-size: contain
   background-repeat: no-repeat
   background-position: center
-  height: 35%
-  width: 50%
+  height: $width * $ratio
+  width: $width
+  margin-bottom: 8px
+  max-width: $max-width
+  max-height: $max-width * $ratio
+  position: relative
   z-index: -1
+  box-sizing: border-box
+
+.hero__copy
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  botoom: 0
+  margin: auto
 
 .hero__header
+  font-family: "FuturaBT W05 Bold"
   font-size: $hero-header-font-size
-  +font-weight-regular
-  text-transform: uppercase
-  color: $hero-header-color
+  letter-spacing: -0.3rem
+  +font-weight-bold
+  color: $color-black
+  margin-bottom: 16px
+  color: transparent
 
 .hero__subheader
+  font-family: 'Montserrat'
   font-size: $hero-subheader-font-size
   text-transform: uppercase
   color: $hero-subheader-color
-  +font-weight-light
-
-+media($tablet-landscape)
-  .hero__logo
-    width: 80%
+  color: transparent
+  +font-weight-medium
 
 +media($tablet-portrait)
   .hero__header
     font-size: $hero-header-font-size--tablet-portrait
   .hero__subheader
     font-size: $hero-subheader-font-size--tablet-portrait
-  .hero__logo
-    height: 25%
 
 +media($mobile)
   .hero__header
     font-size: $hero-header-font-size--mobile
   .hero__subheader
     font-size: $hero-subheader-font-size--mobile
-  .hero__logo
-    height: 20%

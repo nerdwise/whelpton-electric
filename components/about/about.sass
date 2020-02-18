@@ -1,12 +1,12 @@
 @import ../background/background-config
-  
+
 .about
   min-height: 85vh
   display: flex
   flex-direction: column
   align-items: center
   justify-content: space-evenly
-  +about-gradient(to bottom)
+  +about-gradient()
 
 .about__header
   +section-header
@@ -18,7 +18,7 @@
 .about__text
   width: 30%
   color: $about-font-color
-  margin-bottom: 2rem 
+  margin-bottom: 2rem
   +font-weight-light
   opacity: 0
   animation: fadein 0.2s forwards 0.2s
@@ -36,7 +36,7 @@
     line-height: 1.8rem
     margin: 1.5rem
 
-  
+
 +media($tablet-portrait)
   .about__text
     width: 80%

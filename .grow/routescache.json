@@ -1,0 +1,197 @@
+{
+  "concrete": {},
+  "dynamic": {
+    "dev": {
+      "/": {
+        "options": {},
+        "value": {
+          "hashed": "ca87e689fefdda9df1807ebb91c9cf45495b99fcc95d30dff438bc596a2fae45",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "en",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/:locale/": {
+        "options": {
+          "locale": [
+            "en_ca",
+            "fr_fr",
+            "ko",
+            "ko_ko",
+            "de_au",
+            "fr_ca"
+          ]
+        },
+        "value": {
+          "hashed": "ca87e689fefdda9df1807ebb91c9cf45495b99fcc95d30dff438bc596a2fae45",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/:locale/about/": {
+        "options": {
+          "locale": [
+            "en_ca",
+            "fr_fr",
+            "ko",
+            "ko_ko",
+            "de_au",
+            "fr_ca"
+          ]
+        },
+        "value": {
+          "hashed": "93c2a2b71ebc1e01443fd0ebf87deb2f4eae1a92e3d6e9e5d18196faa7934434",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "pod_path": "/content/pages/about.yaml"
+          },
+          "pod_path": "/content/pages/about.yaml"
+        }
+      },
+      "/:locale/projects/": {
+        "options": {
+          "locale": [
+            "en_ca",
+            "fr_fr",
+            "ko",
+            "ko_ko",
+            "de_au",
+            "fr_ca"
+          ]
+        },
+        "value": {
+          "hashed": "fdee7d9cdca0d0cbf0cb287d3bb1c4b350119722f3f3e1e413acb6b7fb2d1c81",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "pod_path": "/content/pages/projects.yaml"
+          },
+          "pod_path": "/content/pages/projects.yaml"
+        }
+      },
+      "/about/": {
+        "options": {},
+        "value": {
+          "hashed": "93c2a2b71ebc1e01443fd0ebf87deb2f4eae1a92e3d6e9e5d18196faa7934434",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "en",
+            "pod_path": "/content/pages/about.yaml"
+          },
+          "pod_path": "/content/pages/about.yaml"
+        }
+      },
+      "/css/*": {
+        "options": null,
+        "value": {
+          "hashed": null,
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "path_format": "/css/",
+            "source_formats": [
+              "/dist/css/"
+            ],
+            "static_filter": {}
+          },
+          "pod_path": null
+        }
+      },
+      "/js/*": {
+        "options": null,
+        "value": {
+          "hashed": null,
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "path_format": "/js/",
+            "source_formats": [
+              "/dist/js/"
+            ],
+            "static_filter": {}
+          },
+          "pod_path": null
+        }
+      },
+      "/projects/": {
+        "options": {},
+        "value": {
+          "hashed": "fdee7d9cdca0d0cbf0cb287d3bb1c4b350119722f3f3e1e413acb6b7fb2d1c81",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "en",
+            "pod_path": "/content/pages/projects.yaml"
+          },
+          "pod_path": "/content/pages/projects.yaml"
+        }
+      },
+      "/sitemap.xml": {
+        "options": null,
+        "value": {
+          "hashed": null,
+          "kind": "sitemap",
+          "meta": {
+            "collections": null,
+            "filters": null,
+            "locales": null,
+            "path": "/sitemap.xml",
+            "template": null
+          },
+          "pod_path": null
+        }
+      },
+      "/static/*": {
+        "options": null,
+        "value": {
+          "hashed": null,
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "path_format": "/static/",
+            "source_formats": [
+              "/static/"
+            ],
+            "static_filter": {}
+          },
+          "pod_path": null
+        }
+      }
+    }
+  },
+  "version": 1
+}
