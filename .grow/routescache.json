@@ -1,11 +1,105 @@
 {
-  "concrete": {},
+  "concrete": {
+    "dev": {
+      "/": {
+        "options": {},
+        "value": {
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "en",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/de_au/": {
+        "options": {},
+        "value": {
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "de_AU",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/en_ca/": {
+        "options": {},
+        "value": {
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "en_CA",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/fr_ca/": {
+        "options": {},
+        "value": {
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "fr_CA",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/fr_fr/": {
+        "options": {},
+        "value": {
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "fr_FR",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/ko/": {
+        "options": {},
+        "value": {
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "ko",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/ko_ko/": {
+        "options": {},
+        "value": {
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "ko_KO",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      }
+    }
+  },
   "dynamic": {
     "dev": {
       "/": {
         "options": {},
         "value": {
-          "hashed": "ca87e689fefdda9df1807ebb91c9cf45495b99fcc95d30dff438bc596a2fae45",
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
@@ -27,7 +121,7 @@
           ]
         },
         "value": {
-          "hashed": "ca87e689fefdda9df1807ebb91c9cf45495b99fcc95d30dff438bc596a2fae45",
+          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
@@ -48,7 +142,7 @@
           ]
         },
         "value": {
-          "hashed": "93c2a2b71ebc1e01443fd0ebf87deb2f4eae1a92e3d6e9e5d18196faa7934434",
+          "hashed": "4a1facc97682175d0f700f562f12e92955e94563d5df49612ef00f7093212bb2",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
@@ -69,7 +163,7 @@
           ]
         },
         "value": {
-          "hashed": "fdee7d9cdca0d0cbf0cb287d3bb1c4b350119722f3f3e1e413acb6b7fb2d1c81",
+          "hashed": "5f0aa1bf8fa53c9554ee02ba81d195397935673136c2d578d0b2aa6d4c57c72b",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
@@ -81,7 +175,7 @@
       "/about/": {
         "options": {},
         "value": {
-          "hashed": "93c2a2b71ebc1e01443fd0ebf87deb2f4eae1a92e3d6e9e5d18196faa7934434",
+          "hashed": "4a1facc97682175d0f700f562f12e92955e94563d5df49612ef00f7093212bb2",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
@@ -142,7 +236,7 @@
       "/projects/": {
         "options": {},
         "value": {
-          "hashed": "fdee7d9cdca0d0cbf0cb287d3bb1c4b350119722f3f3e1e413acb6b7fb2d1c81",
+          "hashed": "5f0aa1bf8fa53c9554ee02ba81d195397935673136c2d578d0b2aa6d4c57c72b",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
