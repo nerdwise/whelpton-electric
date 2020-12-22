@@ -4,27 +4,24 @@
   </h1>
   <div class="boxes">
     {% for box in component.boxes %}
-    <div class="{{ box.class }}">
-      <img src="{{ box.icon }}" class="box__image" alt="" />
-      <img
-        src="{{ box.whiteicon }}"
-        class="box__image box__image--white"
-        alt=""
-      />
-      <h4 class="box__title">
-        {{ box.title }}
-      </h4>
-    </div>
+      <div class="{{ box.class }}">
+        <img src="{{ box.icon }}" class="box__image" alt="" />
+        <h4 class="box__title">
+          {{ box.title }}
+        </h4>
+        {% for content in box.content %}
+          <div class="{{ content.class }}">
+            <div class="content__image-container">
+              <img
+                src="{{ content.image }}"
+                alt="{{ content.title }}"
+                class="content__image"
+              />
+            </div>
+            <p class="content__description">{{ content.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
     {% endfor %}
   </div>
-  {% for content in component.content %}
-  <div class="{{ content.class }}">
-    <p class="content__description">{{ content.description }}</p>
-    <img
-      src="{{ content.image }}"
-      alt="{{ content.title }}"
-      class="content__image"
-    />
-  </div>
-  {% endfor %}
 </section>
