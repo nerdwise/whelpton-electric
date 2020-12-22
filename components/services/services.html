@@ -18,7 +18,7 @@
                 class="content__image"
               />
             </div>
-            <p class="content__description">{{ content.description }}</p>
+            <div class="content__description">{{ content.description|safe }}</div>
           </div>
         {% endfor %}
       </div>

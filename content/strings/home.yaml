@@ -1,19 +1,34 @@
 company_name:
   text@: WhelpTech Electrical Services
 service1_description:
-  text@: Installation and construction of new panels.  Custom modifications and troubleshooting of existing controls.  Installation and troubleshooting of VFD and PLC systems.  Service for water treatment plants and pump control systems.
+  text@: >-
+    <ul>
+      <li>Installation and construction of new panels
+      <li>Custom modifications and troubleshooting of existing controls
+      <li>Installation and troubleshooting of VFD and PLC systems
+      <li>Service for water treatment plants and pump control systems
 service1_title:
   text@: Industrial
 service2_description:
-  text@: Tenant improvements and service.
+  text@: >-
+    <ul>
+      <li>Tenant improvements
+      <li>Service
 service2_title:
   text@: Commercial
 service3_description:
-  text@: New construction, renovations and service.
+  text@: >-
+    <ul>
+      <li>New construction
+      <li>Renovations
+      <li>Service
 service3_title:
   text@: Residential
 service4_description:
-  text@: New construction and service.
+  text@: >-
+    <ul>
+      <li>New construction
+      <li>Service
 service4_title:
   text@: Agricultural
 title:

@@ -42,5 +42,8 @@
     "/static/fonts/5574941/2fcfc1da-a7af-42d2-87f4-6613b3e5c900.woff",
     "/static/fonts/5574941/480df9d4-0a52-44dc-a6ea-32b77ac0dfa5.woff2",
     "/static/images/favicon.png"
+  ],
+  "/content/strings/home.yaml": [
+    "/content/strings/home.yaml"
   ]
 }
