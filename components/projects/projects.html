@@ -3,24 +3,27 @@
     {{ component.title }}
   </h1>
   <div class="gallery">
-    {% for image in component.images %}
+    {% for image in component.insta %}
     <div class="gallery__frame">
       <img
-        src="{{ image.url }}"
-        alt="{{ image.alt }}"
+        src="{{ image.media_url }}"
+        alt="{{ image.caption }}"
         class="gallery__image"
-        data-target="{{ image.dataTarget }}"
+        data-target="{{ loop.index }}"
       />
     </div>
     {% endfor %}
   </div>
   <div class="modal">
     <span class="modal__x">&times;</span>
-    {% for image in component.modalImages %}
-    <img
-      alt="{{ image.alt }}"
-      class="{{ image.class }}"
-    />
-    {% endfor %}
+    <div class="modal__image-container">
+      <div class="modal__image-wrapper">
+        <img
+          src="{{ component.insta[0].media_url }}"
+          alt="{{ component.insta[0].caption}}"
+          class="modal__image" />
+      </div>
+      <div class="modal__caption">{{ component.insta[0].caption }}</div>
+    </div>
   </div>
 </section>

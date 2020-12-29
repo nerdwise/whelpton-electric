@@ -1,33 +1,10 @@
 {
-  "/content/pages/about.yaml": [
-    "/components/about/about.html",
-    "/components/background/background.html",
-    "/components/footer/footer.html",
-    "/components/nav/nav.html",
-    "/content/data/footer.yaml",
-    "/content/data/nav.yaml",
-    "/content/pages/about.yaml",
-    "/dist/css/main.min.css",
-    "/dist/js/main.min.js",
-    "/static/fonts/5574941/2fcfc1da-a7af-42d2-87f4-6613b3e5c900.woff",
-    "/static/fonts/5574941/480df9d4-0a52-44dc-a6ea-32b77ac0dfa5.woff2",
-    "/static/images/favicon.png"
+  "/content/data/insta.yaml": [
+    "/content/data/insta.yaml"
   ],
   "/content/pages/home.yaml": [
-    "/components/background/background.html",
-    "/components/footer/footer.html",
-    "/components/hero/hero.html",
-    "/components/nav/nav.html",
-    "/components/services/services.html",
-    "/content/data/footer.yaml",
-    "/content/data/nav.yaml",
     "/content/pages/home.yaml",
-    "/content/strings/home.yaml",
-    "/dist/css/main.min.css",
-    "/dist/js/main.min.js",
-    "/static/fonts/5574941/2fcfc1da-a7af-42d2-87f4-6613b3e5c900.woff",
-    "/static/fonts/5574941/480df9d4-0a52-44dc-a6ea-32b77ac0dfa5.woff2",
-    "/static/images/favicon.png"
+    "/content/strings/home.yaml"
   ],
   "/content/pages/projects.yaml": [
     "/components/background/background.html",
@@ -35,6 +12,7 @@
     "/components/nav/nav.html",
     "/components/projects/projects.html",
     "/content/data/footer.yaml",
+    "/content/data/insta.yaml",
     "/content/data/nav.yaml",
     "/content/pages/projects.yaml",
     "/dist/css/main.min.css",
@@ -42,8 +20,5 @@
     "/static/fonts/5574941/2fcfc1da-a7af-42d2-87f4-6613b3e5c900.woff",
     "/static/fonts/5574941/480df9d4-0a52-44dc-a6ea-32b77ac0dfa5.woff2",
     "/static/images/favicon.png"
-  ],
-  "/content/strings/home.yaml": [
-    "/content/strings/home.yaml"
   ]
 }

@@ -10,7 +10,7 @@ from protorpc import messages
 REFRESH_TOKEN_URL = "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token={access_token}"
 MEDIA_REQUEST_URL = "" \
                 "https://graph.instagram.com/me/media" \
-                "?fields=media_url" \
+                "?fields=media_url,caption" \
                 "&access_token={access_token}"
 
 class InstaPreprocessor(grow.Preprocessor):

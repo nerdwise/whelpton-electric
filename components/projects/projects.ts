@@ -1,48 +1,38 @@
-import { loadImage } from '../../node_modules/toolbox-v2/src/toolbox/utils/loading/load-image';
-
 class Projects {
-  images: HTMLElement[];
+  images: HTMLImageElement[];
+  modalImage: HTMLImageElement;
   modal: HTMLElement;
   constructor() {
     this.images = Array.from(document.querySelectorAll('.gallery__image'));
     this.modal = document.querySelector('.modal');
+    this.modalImage = document.querySelector('.modal__image');
   }
 
-  openModal(): void {
+  handleModalOpening(): void {
     this.images.forEach(image => {
       image.addEventListener('click', () => {
         this.modal.classList.add('display');
-        const modalImage: HTMLImageElement = document.querySelector(
-          '.modal__image--' + image.dataset.target
-        );
-        const modalImageSrc: string = `/static/images/projects/projects${
-          image.dataset.target
-        }-min.jpg`;
-        loadImage(modalImageSrc).then(() => {
-          modalImage.src = modalImageSrc;
-          modalImage.classList.add('display-image');
-          this.closeModal(modalImage);
-        });
+        this.modalImage.src = image.src;
+        this.modalImage.alt = image.alt;
       });
     });
   }
 
-  closeModal(image: Element): void {
+  handleModalClosing(): void {
     window.addEventListener('click', event => {
       if (event.target == this.modal) {
         this.modal.classList.remove('display');
-        image.classList.remove('display-image');
       }
     });
     const x: HTMLElement = document.querySelector('.modal__x');
     x.addEventListener('click', event => {
       this.modal.classList.remove('display');
-      image.classList.remove('display-image');
     });
   }
 
   init(): void {
-    this.openModal();
+    this.handleModalOpening();
+    this.handleModalClosing();
   }
 }
 

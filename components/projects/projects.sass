@@ -51,20 +51,62 @@
   z-index: 1
   left: 0
   top: 0
-  align-items: center
-  justify-content: center
+  bottom: 0
+  right: 0
   width: 100%
   height: 100%
-  overflow: auto
+  padding-top: 48px
+  box-sizing: border-box
+  overflow: hidden
   opacity: 0
 
-.modal__image
-  max-height: 70%
-  max-width: 90%
-  border-radius: 5px
-  display: none
+.modal__image-container
+  +box-shadow
+  +grey-color-gradient
+  padding: 24px
+  max-height: #{'min(calc(100vh - 200px), calc(100vw - 48px - 48px))'}
+  max-width: #{'min(calc(100vh - 200px), calc(100vw - 48px - 48px))'}
+  +media($tablet-portrait)
+    padding: 16px
+    max-height: #{'min(calc(100vh - 200px), calc(100vw - 32px - 48px))'}
+    max-width: #{'min(calc(100vh - 200px), calc(100vw - 32px - 48px))'}
+  +media($mobile)
+    padding: 12px
+    max-height: #{'min(calc(100vh - 200px), calc(100vw - 24px - 48px))'}
+    max-width: #{'min(calc(100vh - 200px), calc(100vw - 24px - 48px))'}
+  height: auto
+  width: auto
   opacity: 0
   transform: translateY(20%)
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  margin: auto
+  text-align: center
+  border-radius: 5px
+  box-sizing: border-box
+
+.modal__image-wrapper
+  border-radius: 5px
+  grid-column: 1 / span 1
+  grid-row: 1 / span 1
+  overflow: hidden
+  border-radius: 5px
+
+.modal__image
+  max-width: 100%
+  max-height: 100%
+  margin: auto
+  border-radius: 5px
+
+.modal__caption
+  margin-top: 24px
+  line-height: 1.5rem
+  +media($tablet-portrait)
+    margin-top: 16px
+  +media($mobile)
+    margin-top: 12px
 
 .modal__x
   position: absolute
@@ -77,9 +119,8 @@
   display: flex
   animation: fadein .2s forwards
 
-.display-image
-  display: block
-  animation: fadeinup .4s forwards .2s
+  .modal__image-container
+    animation: fadeinup .4s forwards .2s
 
 +media($mobile)
   .projects__header

@@ -99,7 +99,7 @@
       "/": {
         "options": {},
         "value": {
-          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "hashed": "7a50c7b5ff9d037b31a62cbc052090c136d0968ae9f083fb7fb3f59295d97ed0",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
@@ -121,7 +121,7 @@
           ]
         },
         "value": {
-          "hashed": "180a3944a468690551b32a601c056bc9332f34c2febb48aa04e518a16b79992a",
+          "hashed": "7a50c7b5ff9d037b31a62cbc052090c136d0968ae9f083fb7fb3f59295d97ed0",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
@@ -163,7 +163,7 @@
           ]
         },
         "value": {
-          "hashed": "5f0aa1bf8fa53c9554ee02ba81d195397935673136c2d578d0b2aa6d4c57c72b",
+          "hashed": "cc1c5ff826811e2a320de417acce50d6c8c22405914463db3b10de54a903a0bc",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
@@ -236,7 +236,7 @@
       "/projects/": {
         "options": {},
         "value": {
-          "hashed": "5f0aa1bf8fa53c9554ee02ba81d195397935673136c2d578d0b2aa6d4c57c72b",
+          "hashed": "cc1c5ff826811e2a320de417acce50d6c8c22405914463db3b10de54a903a0bc",
           "kind": "doc",
           "meta": {
             "collection_path": "/content/pages",
