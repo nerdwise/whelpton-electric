@@ -82,4 +82,6 @@ workflows:
           branches:
             only:
             - master
+      jobs:
+      - deploy
 
