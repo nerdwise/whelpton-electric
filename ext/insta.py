@@ -7,15 +7,7 @@ import requests
 from concurrent import futures
 from protorpc import messages
 
-
-ACCESS_TOKEN_REQUEST_URL = "" \
-                       "https://api.instagram.com/oauth/access_token" \
-                       # "?client_id={client_id}" \
-                       # "&client_secret={client_secret}" \
-                       # "&grant_type=authorization_code" \
-                       # "&redirect_uri={redirect_uri}" \
-                       # "&code={code}"
-
+REFRESH_TOKEN_URL = "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token={access_token}"
 MEDIA_REQUEST_URL = "" \
                 "https://graph.instagram.com/me/media" \
                 "?fields=media_url" \
@@ -34,6 +26,11 @@ class InstaPreprocessor(grow.Preprocessor):
         self.lock = threading.RLock()
 
     def run(self, build=True):
+        # Refresh the token
+        requests.get(
+            REFRESH_TOKEN_URL.format(access_token=self.config.access_token))
+
+        # Pull the photos
         media_request_url = MEDIA_REQUEST_URL.format(
             access_token=self.config.access_token)
         media_response = requests.get(media_request_url)
