@@ -23,6 +23,10 @@ meta:
     twitter: example
     facebook: example
 
+extensions:
+  preprocessors:
+    - ext.insta.InstaPreprocessor
+
 preprocessors:
 - name: gulp
   kind: gulp
@@ -33,6 +37,12 @@ preprocessors:
   path: /content/data/gdocs-test.md
   id: 1G2h_UCwEFQG48iqt5zY368mXBccM1RZ9pBBgHlL6980
   convert: true
+- kind: insta
+  autorun: true
+  name: insta
+  path: /content/data/insta.yaml
+  access_token: "IGQVJWNzNpQm9xb0ozcVF5VFVtT3VRZAExfNkJRQ0p1ZAGRKcktUZAjZAxMmJyUnozSXVhd2tFVDRIUmFkdXhlSU1LVTh3c09PVnBiTmhMZAmlNRTlBVzdiMm5tV3VET2F0azZA0V1lZAUkRB"
+  client_secret: "b47d5a3fa7b9d6a8d10dac5b1b4037f8"
 - kind: google_sheets
   autorun: false
   name: gsheets

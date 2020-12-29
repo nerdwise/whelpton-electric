@@ -5,8 +5,8 @@
 
 .services
   width: 100%
-  box-shadow: 0 -2px 8px rgba(0,0,0,.1)
   +services-gradient()
+  box-shadow: 0 -2px 8px rgba(0,0,0,.1)
   color: $services-text-color
   display: flex
   flex-direction: column
@@ -23,7 +23,7 @@
   margin-bottom: 1rem
   display: grid
   grid-template-columns: 1fr 1fr 1fr 1fr
-  grid-column-gap: 1rem
+  grid-column-gap: 1.5rem
   position: relative
 
   +media($tablet-landscape)
@@ -36,10 +36,9 @@
 
 .box
   +box-shadow
-  +grey-color-vertical-gradient
   text-align: center
   color: $service-box-text-color
-  padding: 1rem 2rem
+  padding: 1rem 1.5rem 0
   margin-bottom: 1rem
 
 .box__title
