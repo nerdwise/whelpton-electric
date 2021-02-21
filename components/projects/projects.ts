@@ -1,19 +1,39 @@
 class Projects {
-  images: HTMLImageElement[];
+  assets: Array<HTMLImageElement|HTMLVideoElement>;
   modalImage: HTMLImageElement;
+  modalVideo: HTMLVideoElement;
   modal: HTMLElement;
+  modalCaption: HTMLElement;
   constructor() {
-    this.images = Array.from(document.querySelectorAll('.gallery__image'));
+    this.assets = Array.from(document.querySelectorAll('.gallery__image'));
     this.modal = document.querySelector('.modal');
     this.modalImage = document.querySelector('.modal__image');
+    this.modalVideo = document.querySelector('.modal__video');
+    this.modalCaption = document.querySelector('.modal__caption');
   }
 
   handleModalOpening(): void {
-    this.images.forEach(image => {
-      image.addEventListener('click', () => {
+    this.assets.forEach((asset) => {
+      asset.addEventListener('click', () => {
         this.modal.classList.add('display');
-        this.modalImage.src = image.src;
-        this.modalImage.alt = image.alt;
+        if (asset instanceof HTMLImageElement) {
+          this.modalVideo.style.display = 'none';
+          this.modalImage.style.display = '';
+          this.modalImage.src = asset.src;
+          this.modalImage.alt = asset.alt;
+          this.modalCaption.innerText = asset.alt;
+          console.log('Set image');
+        } else {
+          this.modalImage.style.display = 'none';
+          this.modalVideo.style.display = '';
+          this.modalVideo.innerHTML = '';
+          this.modalVideo.innerHTML = asset.innerHTML;
+          this.modalVideo.setAttribute(
+            'aria-label', asset.getAttribute('aria-label'));
+          this.modalCaption.innerText = asset.getAttribute('aria-label');
+          this.modalVideo.load();
+          console.log('Set video');
+        }
       });
     });
   }

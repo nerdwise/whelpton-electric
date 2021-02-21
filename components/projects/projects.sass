@@ -68,11 +68,11 @@
   max-width: #{'min(calc(100vh - 200px), calc(100vw - 48px - 48px))'}
   +media($tablet-portrait)
     padding: 16px
-    max-height: #{'min(calc(100vh - 200px), calc(100vw - 32px - 48px))'}
+    max-height: calc(100vh - 200px)
     max-width: #{'min(calc(100vh - 200px), calc(100vw - 32px - 48px))'}
   +media($mobile)
     padding: 12px
-    max-height: #{'min(calc(100vh - 200px), calc(100vw - 24px - 48px))'}
+    max-height: calc(100vh - 200px)
     max-width: #{'min(calc(100vh - 200px), calc(100vw - 24px - 48px))'}
   height: auto
   width: auto
@@ -94,7 +94,8 @@
   overflow: hidden
   border-radius: 5px
 
-.modal__image
+.modal__image,
+.modal__video
   max-width: 100%
   max-height: 100%
   margin: auto
@@ -125,5 +126,6 @@
 +media($mobile)
   .projects__header
     font-size: $section-header-font-size--mobile
-  .modal__image
+  .modal__image,
+  .modal__video
     height: auto

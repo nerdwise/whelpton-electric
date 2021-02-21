@@ -5,12 +5,22 @@
   <div class="gallery">
     {% for image in component.insta %}
     <div class="gallery__frame">
+      {% if "video" in image.media_url %}
+      <video aria-label="{{ image.caption }}"
+             class="gallery__image"
+             data-target="{{ loop.index }}"
+             playsinline autoplay muted loop>
+        <source src="{{ image.media_url }}"
+                type="video/mp4">
+      </video>
+      {% else %}
       <img
         src="{{ image.media_url }}"
         alt="{{ image.caption }}"
         class="gallery__image"
         data-target="{{ loop.index }}"
       />
+      {% endif%}
     </div>
     {% endfor %}
   </div>
@@ -18,6 +28,12 @@
     <span class="modal__x">&times;</span>
     <div class="modal__image-container">
       <div class="modal__image-wrapper">
+        <video class="modal__video"
+               aria-label="{{ component.insta[0].caption}}"
+               playsinline autoplay muted controls="false">
+          <source src="{{ component.insta[0].media_url }}"
+                  type="video/mp4">
+        </video>
         <img
           src="{{ component.insta[0].media_url }}"
           alt="{{ component.insta[0].caption}}"
