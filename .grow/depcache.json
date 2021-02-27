@@ -3,18 +3,15 @@
     "/content/data/insta.yaml"
   ],
   "/content/pages/home.yaml": [
-    "/content/pages/home.yaml",
-    "/content/strings/home.yaml"
-  ],
-  "/content/pages/projects.yaml": [
     "/components/background/background.html",
     "/components/footer/footer.html",
+    "/components/hero/hero.html",
     "/components/nav/nav.html",
-    "/components/projects/projects.html",
+    "/components/services/services.html",
     "/content/data/footer.yaml",
-    "/content/data/insta.yaml",
     "/content/data/nav.yaml",
-    "/content/pages/projects.yaml",
+    "/content/pages/home.yaml",
+    "/content/strings/home.yaml",
     "/dist/css/main.min.css",
     "/dist/js/main.min.js",
     "/static/fonts/5574941/2fcfc1da-a7af-42d2-87f4-6613b3e5c900.woff",
