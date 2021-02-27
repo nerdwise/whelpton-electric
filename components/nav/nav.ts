@@ -20,7 +20,6 @@ class Nav {
   }
 
   init(): void {
-    console.log('Initializing nav');
     this.startScrollWatcher();
     this.expandNav();
     this.scrollResponsiveNav();
@@ -42,9 +41,7 @@ class Nav {
     const mobileNav: HTMLElement = document.querySelector('.nav--mobile');
 
 
-    console.log('Setting listener');
     navMenu.addEventListener('click', () => {
-      console.log('Called listener');
       mobileNav.classList.toggle('display-nav');
       navMenu.classList.toggle('x');
     });

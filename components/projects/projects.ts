@@ -22,7 +22,6 @@ class Projects {
           this.modalImage.src = asset.src;
           this.modalImage.alt = asset.alt;
           this.modalCaption.innerText = asset.alt;
-          console.log('Set image');
         } else {
           this.modalImage.style.display = 'none';
           this.modalVideo.style.display = '';
@@ -32,7 +31,6 @@ class Projects {
             'aria-label', asset.getAttribute('aria-label'));
           this.modalCaption.innerText = asset.getAttribute('aria-label');
           this.modalVideo.load();
-          console.log('Set video');
         }
       });
     });
