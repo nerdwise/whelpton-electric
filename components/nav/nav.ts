@@ -6,7 +6,6 @@ import { DistanceFunction } from '../../node_modules/toolbox-v2/src/toolbox/comp
 
 class Nav {
   private scrollWatcher_: ActiveOnCondition = null;
-  private removeTransformOnScrollDown_: RemoveTransformOnScrollDown = null;
   private scrollEffect_: ScrollEffect = null;
   private mobileNavLinks_: HTMLElement[];
   private navMenu_: HTMLElement;
@@ -21,6 +20,7 @@ class Nav {
   }
 
   init(): void {
+    console.log('Initializing nav');
     this.startScrollWatcher();
     this.expandNav();
     this.scrollResponsiveNav();
@@ -41,7 +41,10 @@ class Nav {
     const navMenu: HTMLElement = document.querySelector('.nav__menu');
     const mobileNav: HTMLElement = document.querySelector('.nav--mobile');
 
+
+    console.log('Setting listener');
     navMenu.addEventListener('click', () => {
+      console.log('Called listener');
       mobileNav.classList.toggle('display-nav');
       navMenu.classList.toggle('x');
     });

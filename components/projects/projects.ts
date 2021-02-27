@@ -45,9 +45,11 @@ class Projects {
       }
     });
     const x: HTMLElement = document.querySelector('.modal__x');
-    x.addEventListener('click', event => {
-      this.modal.classList.remove('display');
-    });
+    if (x) {
+      x.addEventListener('click', event => {
+        this.modal.classList.remove('display');
+      });
+    }
   }
 
   init(): void {
