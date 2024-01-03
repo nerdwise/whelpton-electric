@@ -9,7 +9,7 @@ ng_controller: ProjectsController
 
 components:
 - component: background
-- component: projects
-  title: Projects
-  id: projects
-  insta: !g.yaml /content/data/insta.yaml
+#- component: projects
+#  title: Projects
+#  id: projects
+#  insta: !g.yaml /content/data/insta.yaml
