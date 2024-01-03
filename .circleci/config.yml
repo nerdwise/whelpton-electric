@@ -21,7 +21,7 @@ grow_install: &grow_install
 base_deploy: &base_deploy
   working_directory: ~/grow
   docker:
-  - image: grow/base:latest
+  - image: grow/base:0.8.19
 
 firebase_deploy: &firebase_deploy
   name: Deploy to Firebase
