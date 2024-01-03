@@ -63,10 +63,7 @@ const buildNewSass = () => {
     )
     .pipe(
       gulpAutoprefixer({
-        "browserslist": [
-          "> 1%",
-          "last 2 versions"
-        ]
+        browsers: ["last 1 version", "last 2 iOS versions"]
       })
     )
     .pipe(gulp.dest(config.SASS_OUT_DIR));
