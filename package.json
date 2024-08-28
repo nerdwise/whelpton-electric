@@ -15,7 +15,7 @@
     "toolbox-v2": "git+https://github.com/angusm/toolbox-v2.git#5f9cb6c83e20092fcddb1faf35c36f25c6290a51",
     "tsc": "^1.20150623.0",
     "typescript": "^3.3.3333",
-    "webpack": "4.20.2",
+    "webpack": "5.94.0",
     "webpack-stream": "5.1.1"
   },
   "engines": {
